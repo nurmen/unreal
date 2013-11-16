@@ -1,0 +1,122 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{fancyhdr}
+\usepackage{sidecap,caption}
+\usepackage{eurofont}
+\usepackage{lastpage}
+\usepackage{graphicx}
+%\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{lscape}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, anchorcolor=red, urlcolor=blue}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{abstract}
+\usepackage{appendix}
+\usepackage{multicol}
+\usepackage{bmpsize}
+%%%%%%%%%%%%%%%needed for glossario%%%%%%%%%
+%\usepackage{guit}
+
+%\usepackage[acronym]{glossaries}
+%\newglossaryentry{parola}{name=parola,description={Si spiega da sé}}
+%\newacronym{guit}{\GuIT{}}{Gruppo Utilizzatori Italiani di \TeX{}}
+%\addto\captionsitalian{\renewcommand{\glossaryname}{Glossario}}
+%\makeglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%fine need glossario
+%%%%%%%%%%%glossario prova 2
+\usepackage{glossaries}
+\addto\captionsitalian{\renewcommand{\glossaryname}{Glossario}}
+\newglossaryentry{prova}{name=prova, description={parole a caso}}
+\newglossaryentry{dematerializzazione} {name=dematerializzazione, description={La dematerializzazione è la conversione di un qualunque documento cartaceo in un formato digitale, fruibile con mezzi informatici, finalizzata alla distruzione della materialità, così da beneficiare dei netti vantaggi di maneggevolezza offerti dalla tecnologia.}}
+\makeglossaries
+%%%%%%%%%%%%%% fine glossario prova 2
+\usepackage[all]{hypcap}
+\oddsidemargin=.15in
+\evensidemargin=.15in
+\textwidth=6in
+%\topmargin=-.5in
+\parindent=0in
+%\headheight=1in
+\pagestyle{fancy}
+\lhead{
+\bfseries {\Large \TipoDocumento}\\
+\bfseries Versione: \Versione\\
+}
+\chead{}
+\lhead{
+%\includegraphics[scale=0.455]{../Logo&Header/SEVENTECH2.png}
+}
+%\lfoot{\bfseries \TipoDocumento{} v\Versione}
+\cfoot{}
+\rfoot{\thepage\ of \mypageref{LastPage}}
+\newcommand*{\mypageref}[1]{
+\hypersetup{linkcolor=black}\pageref{#1}\hypersetup{linkcolor=black}}
+%\userpackage{lipsum}
+\renewcommand{\footrulewidth}{0.4pt}
+%\newcommand{\numref}[1]{\textsl{\nameref{#1} (\ref{#1})}}
+%\newcommand{\NomeGruppo}{SevenTech}
+%\newcommand{\Progetto}{''3DMob: Grafica 3D su device mobili''}
+%\newcommand{\Prop}{Mentis s.r.l.}
+%\newcommand{\Glossario}{Al fine di evitare incomprensioni dovute a possibili ambiguità del linguaggio, dei termini e acronimi utilizzati nei documenti, viene allegato il glossario contenuto nel file \emph{Glossario\_{}vX.Y.pdf}.
+%Saranno in esso definiti e descritti tutti i termini marcati da una \underline{sottolineatura} nella documentazione fornita.}
+
+%\newcommand{\Prodotto}{
+
+%Il prodotto denominato 3DMob ha lo scopo di fornire un \underline{applicativo} in grado di interpretare \underline{oggetti 3D} a partire dai \underline{formati} \underline{3DS} o \underline{OBJ} e relativo file \underline{MTL}, permettendo all'\underline{utente} di applicare modifiche alla \underline{scena 3D} e di visualizzarne l'anteprima. Il prodotto dovrà successivamente consentire l'\underline{esportazione} del modello 3D nel \underline{formato} \underline{JSON} o \underline{XML}, in modo tale che sia immediatamente compatibile con le \underline{librerie} grafiche \underline{\underline{OpenGL} ES} 2.0, utilizzate nei \underline{device mobili}.
+%  Tale formato dovrà essere conforme ai limiti impliciti delle \underline{librerie} grafiche \underline{OpenGL ES} 2.0, in modo che i file esportati possano essere immediatamente utilizzabili nei \underline{device mobili} che supportano tali librerie.
+
+%}
+\begin{document}
+%\thispagestyle{empty}
+%\begin{center}%\centerline{
+%\includegraphics[scale=1.05]{../Logo&Header/logo_principale.png}}
+%{\href{mailto:grupposwe2013@gmail.com}{\color[rgb]{0.39,0.37,0.38}grupposwe2013@gmail.com}}\\ [3pc]
+%{\Huge {3DMob: Grafica 3D su device mobili}}\\[.5pc]
+%\underline{\hspace{6in}}\\[3pc]
+%{\Huge {\TipoDocumento}}\\[1pc]
+%{\emph{Versione \Versione}}\\
+%\end{center}
+%\vspace{.3in}
+\begin{titlepage}
+ 
+\begin{center}
+ 
+% Upper part of the page
+\includegraphics[scale=.5]{logoBlack.png}
+ 
+\textsc{\LARGE Università degli Studi di Padova}\\[1.5cm]
+ 
+\textsc{\Large Dipartimento di Matematica\\[0.2cm] Corso di Laurea in Informatica}\\[0.8cm]
+  
+% Title
+\\[0.8cm]{\Huge \doublespacing \bfseries \begin{spacing}{1}{Classificazione firme statiche utilizzando i Hidden~Markov~Models}\end{spacing}}
+\\[2cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Relatore:} \\
+Ch.mo Prof. Tullio \textsc{Vardanega}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Laureando:}\\
+Alexandru \textsc{Prigoreanu 1004887}
+\end{flushright}
+\end{minipage}
+ 
+\vfill
+ 
+% Bottom of the page
+{\large Anno accademico 2012/2013}
+ 
+\end{center}
+ 
+\end{titlepage}
