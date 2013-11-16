@@ -1,0 +1,18 @@
+- termini glossario (glossario inserito, sembra funzionare: mancano i termini9
+
+DONE- sommario/abstract
+
+- norme/convenzioni tipografiche
+
+- bold su qualche parola?
+
+DONE- indice
+
+- capitolo I
+- esempi prodotti con diagrammi semplici architetturali
+
+- capitolo II
+
+- capitolo III
+
+- capitolo IV

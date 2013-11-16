@@ -1,0 +1,13 @@
+Correzioni iniziali capitolo I.
+
+Ricevuto e visto.
+I contenuti del capitolo 1 sono nella direzione delle attese.
+Tuttavia, dovrai fare alcune correzioni:
+DONE- NORMALE : il tono delle parti che descrivono l'azienda in generale, sono troppo pubblicitari (come quelli che l'azienda usa per descrivere se stessa) mentre tu devi usare un tono da osservatore neutro
+DONE- non usarai il tempo futuro e neppure la forma passiva per introdurre i contenuti di parti della relazione; non dirai quindi, per esempio, "Inizialmente verr a proposta" ma "Per prima cosa descrivo / la relazione descrive"
+- DIFFICILE?IMPOSSIBILE?: i prodotti di cui parli devono essere descritti in forma di semplici diagrammi architetturali, che facciano vedere cosa fanno e di cosa sono fatti
+DONE - FACILE : invece di solo elencare le tecnologie in uso, le presenterai in un diagramma che mostri il loro ruolo, nello sviluppo, all'interno di progetti, nello strato presentazione o in quello persistenza, ecc.
+DONE- FACILE : farai cosa analoga nella presentazione dei processi interni.
+
+
+
