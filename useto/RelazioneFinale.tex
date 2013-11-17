@@ -160,10 +160,24 @@ In figura 3 vediamo un resoconto delle fasi necessarie allo sviluppo software.
 
 \section{Progetto aziendale}
 \label{2.0}
-Questo capitolo ha lo scopo di mostrare al lettore l'ambito in cui si colloca il progetto di stage proposto dall'azienda Corvallis. Inizialmente verranno presentati i motivi che hanno portato alla nascità del progetto. A seguire sarà effettuata una panoramica sulla classificazione delle firme statiche. In seguito verrà descritto il prototipo/classificatore preesistente al progetto di stage. Infine verranno illustrati gli obiettivi, le aspettative e i vincoli del progetto aziendale a cui ho preso parte.
+Questo capitolo ha lo scopo di mostrare al lettore l'ambito in cui si colloca il progetto di stage proposto dall'azienda Corvallis. Inizialmente verranno presentati i motivi che hanno portato alla nascità del progetto. A seguire sarà effettuata una panoramica sulla classificazione delle firme statiche. In seguito verrà descritto il prototipo/classificatore preesistente al progetto di stage. Infine verranno illustrati gli obiettivi, le aspettative e i vincoli del progetto aziendale a cui ho preso parte.\\\\
+Visti i notevoli vantaggi in termini di incremento dell'efficienza e di riduzione dei costi che la dematerializzazione garantisce (risparmio relativo ai costi di stampa, acquisto e manutenzione delle stampanti), nell'ambito delle nuove normative alle banche sarà concesso lo scambio di immagini degli assegni bancari. 
+
+In base a questa premessa l'azienda Corvallis ha intuito che il core di un'applicazione bancaria che accetta lo scambio di immagini degli assegni bancari sarà un classificatore di firme statiche accurato, robusto e affidabile. Conseguentemente ha implementato un prototipo per la classificazione delle firme statiche.
+
 \subsection{Introduzione alla classificazione di firme statiche}
 \label{2.1}
-\gls{dematerializzazione}
+La firma è un tratto comportamentale di un individuo e costituisce una particolare classe di scrittura dove lettere o parole possono essere non distinguibili. \'{E} considerata un elemento distintivo aventi caratteristiche uniche e personali. 
+
+Nasce quindi la necessità di distinguere tra firme false e firme autentiche.
+
+A seconda del hardware front-end, un sistema di verifica della firma (signature verification system) può essere etichettato come offline o online. Nei sistemi offline la verifica della firma avviene dopo la sottoscrizione della firma. 
+
+- si hanno molte meno informazioni con le firme statiche
+- i sistemi online sono di conseguenza più accurati, firma biometrica, pressione, velocità, inclinazione,
+
+Una firma è trattata come un image che conserva un certo pattern di pixel che appartiene a un individuo specifico. I sistemi di verifica delle firme si occupano quindi col esaminare e decidere se una firma appartiene "veramente" al firmatario o no. La verifica di firme è un differente problema dal pattern recognition poiché presi due campioni genuini di un firmatario non sono uguali.
+
 \subsubsection{Prototipo preesistente}
 \label{2.1.1}
 
