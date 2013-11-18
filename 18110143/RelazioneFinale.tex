@@ -1,0 +1,302 @@
+\newcommand{\Versione}{1.0}%Versione Finale
+\newcommand{\Data}{2013-01-21}%Data di creazione
+%\newcommand{\TipoDocumento}{Relazione finale sullo stage}
+
+\input{../Logo&Header/header.tex}
+
+%\vspace{.4in}
+
+%TESTO DEL SOMMARIO
+\null\vspace{2.0in}
+\begin{abstract}
+La presente relazione ha come scopo la descrizione dell'attività di stage, svolta dal sottoscritto, nel periodo settembre-ottobre 2013 presso l'azienda Corvallis. Il primo capitolo descrive l'azienda ospitante. Il secondo capitolo espone le motivazioni e gli obiettivi del progetto di stage. Il terzo capitolo illustra in modo approfondito le attività effettuate per raggiungere gli obiettivi prefissati. Il quarto ed ultimo capitolo riporta una valutazione a posteriori sul lavoro svolto, sulle conoscenze acquisite e sulla distanza tra le conoscenze richieste e le conoscenze possedute.
+\end{abstract}
+\vspace{\fill}
+%
+\newpage
+
+
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\listoftables
+\listoffigures
+
+\newpage
+
+\section{Dominio applicativo}\\
+\label{1.0}
+La prima parte di questa relazione si prefigge di presentare al lettore il contesto di lavoro dell'azienda ospitante il progetto di stage. Inizialmente descrivo brevemente l'azienda. A seguire effettuo una panoramica sui prodotti e servizi che essa offre e sui clienti che cerca di soddisfare. Infine elenco alcune delle tecnologie di appoggio allo sviluppo software e i processi interni di quest'ultimo.
+
+\subsection{Azienda}
+\label{1.1}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{../Logo&Header/logoCorvallis.png}
+\caption{ Logo azienda Corvallis}
+\end{figure}
+
+Corvallis S.p.A. (http://www.corvallis.it/) è una società italiana presente nel settore dell’Information Technology. Essa applica le sue competenze funzionali, tecnologiche e di processo, acquisite in quasi trenta anni di operatività, in 4 settori strategici per il mondo finance:
+\begin{itemize}
+
+\item risparmio gestito e crediti;
+\item document management;
+\item area compliance;
+\item evoluzione tecnologica.\\
+\end{itemize}
+
+Corvallis fornisce prodotti e servizi a clienti appartenenti all'ambito finanziario (banche e assicurazioni), industria/servizi e Pubblica Amministrazione. In particolare, Corvallis effettua attività di progettazione e sviluppo software, di fornitura di prodotti software propri e di terzi, di manutenzione e assistenza tecnica, di consulenza.
+
+Il Gruppo Corvallis è composto da più di 600 risorse, tra dipendenti e collaboratori, distribuite in 13 sedi operative nel territorio italiano.
+
+\subsection{Prodotti e clienti}
+\label{1.2}
+\subsubsection{Banche}
+\label{1.2.1}
+Corvallis opera da molti anni con i principali istituti di credito e società prodotto. Le aree di competenza sviluppate riguardano:
+\begin{itemize}
+\item Risparmio Gestito;
+\item Finanza;
+\item Crediti;
+\item Compliance;
+\item Governance;
+\item Sistemi di Pagamento;
+\item Document Management.\\
+\end{itemize}
+Esempi di prodotti in questo ambito:
+\begin{itemize}
+\item Antifrode Carte Pagamento, Soluzione per la prevenzione delle frodi sulle carte di pagamento;
+\item RG - GeDoFi, Sistema di Gestione Documentale per Banca Depositaria;
+\item FIRME - CSIGNgra, Tecnologia di riconoscimento e cattura della firma biometrica.
+\end{itemize}
+\subsubsection{Assicurazioni}
+\label{1.2.2}
+Corvallis può effettuare outsourcing nelle compagnie Assicurative per i processi Vita e Danni (IT e backoffice). L'offerta verso le compagnie assicuratrici riguarda le seguenti aree:
+\begin{itemize}
+\item Sistema Portafoglio Vita e Danni;
+\item Sistemi di agenzia;
+\item Sistemi sinistri;
+\item Compliance;
+\item Governance;
+\item Servizi di Back Office;
+\item Outsourcing;
+\item Document Management.
+\end{itemize}
+
+\subsubsection{Industria e servizi}
+\label{1.2.3}
+I clienti di Corvallis sono alcune industrie e imprese appartenenti a differenti settori: Oil~\&~Gas, Engineering, Construction, Aerospace~\&~Defense, Telco, Media. Corvallis possiede competenze anche nell'ambito del Project~\&~Portfolio Management. Inoltre svolge erogazione di servizi di supporto specialistico relativo a prodotti leader di mercato tra i quali Cognos, Qlikview, Hyperion, Business~Object e IrionDQ.
+\subsubsection{Pubblica Amministrazione}
+\label{1.2.4}
+Corvallis offre soluzioni e servizi alle pubbliche amministrazioni. Alcune di queste riguardano:
+\begin{itemize}
+\item Tributi e fiscalità per gli enti locali;
+\item Sistemi informativi territoriali e catastali, GIS, Digital Mapping e cartografia;
+\item Document Management;
+\item Sistemi Informativi per la catalogazione, conservazione e la tutela dei Beni Culturali.\\
+\end{itemize}
+Esempi di prodotti in questo ambito:
+\begin{itemize}
+\item AML - WINTAR, prodotto per la gestione dell'Archivio Unico Informatico
+\item AML - Agenzia delle Entrate, prodotto per la gestione delle segnalazioni di vigilanza verso l'Agenzia delle Entrate.
+\end{itemize}
+\subsection{Tecnologie}
+\label{1.3}
+Seguono alcune delle tecnologie impiegate nello sviluppo software.
+
+I linguaggi di programmazione più utilizzati sono Java e Cobol.
+
+Il sistema di versionamento in uso è il Concurrent Versions System (CVS).
+
+Alcuni dei database utilizzati sono: DB2, Oracle, MS SQL, PostgreSQL
+
+I framework maggiormente utilizzati sono JBoss e JWolf. JWolf è stato creato dall'azienda stessa.\'{E} un framework per lo sviluppo di applicazioni su tecnologia Java multipiattaforma e multicanale.
+
+L'ambiente di sviluppo per Java è Eclipse.\\
+
+In figura 2 possiamo vedere uno schema riassuntivo di alcune delle tecnologie in uso.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.55]{../Logo&Header/tecnologieUsate.png}
+\caption{Tecnologie in uso}
+\end{figure}
+
+
+\subsection{Processi interni}
+\label{1.4}
+Le fasi di sviluppo di un progetto sono costituite da:
+\begin{itemize}
+\item Coordinamento e Riunioni.
+In questa fase vengono pianificate tutte le attività necessarie allo svolgimento del progetto. Gli incontri con i clienti hanno come scopo una efficiente trasmissione di informazioni;
+\item Analisi dei requisiti.
+L'output dell'attività di analisi è un documento in cui vengono racchiusi tutti i requisiti funzionali, qualitativi, prestazionali e dichiarativi dei quali il prodotto finale dovrà garantirne il soddisfacimento. Il documento serve da input per la fase di progettazione;
+\item Progettazione.
+Nella fase di progettazione si definiscono le specifiche tecniche delle funzionalità da realizzare. Il risultato di questa fase è il documento di Specifiche Tecniche di Progettazione;
+\item Sviluppo.
+\'{E} lo stadio esecutivo del progetto con il quale si realizzano i moduli software previsti dal disegno applicativo. In questa fase vengono effettuati test di unità;
+\item Test funzionali e di sistema.
+I test funzionali hanno lo scopo di verificare che i moduli realizzati durante la fase di codifica rispettino quanto fissato dai requisiti iniziali. Il test di sistema valida il prodotto nella sua interezza;
+\item Collaudo con il cliente.
+Si tratta di un test di sistema effettuato su un ambiente del cliente e con dati di prova forniti dallo stesso. L'output di questa attività è un verbale che racconta l'esito del collaudo;
+\item Documentazione di prodotto.
+Questa fase prevede la stesura dei Manuali di Prodotto relativi al software realizzato;\\
+\end{itemize}
+
+L'output di ogni fase viene verificato e, se conforme agli standard di qualità dell'azienda, approvato. Altrimenti dovranno essere indicate delle misure correttive per i problemi individuati.\\
+
+In figura 3 vediamo un resoconto delle fasi necessarie allo sviluppo software.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.55]{../Logo&Header/sviluppoSoftware.png}
+\caption{ Sviluppo Software, ciclo di vita}
+\end{figure}
+
+\newpage
+\newpage
+
+\section{Progetto aziendale}
+\label{2.0}
+Questo capitolo ha lo scopo di mostrare al lettore l'ambito in cui si colloca il progetto di stage proposto dall'azienda Corvallis. Inizialmente presento i motivi che hanno portato alla nascità del progetto. A seguire effettuo una panoramica sulla classificazione delle firme statiche. In seguito descrivo il prototipo/classificatore preesistente al progetto di stage. Infine illustro gli obiettivi, le aspettative e i vincoli del progetto aziendale a cui ho preso parte.\\\\
+Visti i notevoli vantaggi in termini di incremento dell'efficienza e di riduzione dei costi che la dematerializzazione garantisce (risparmio relativo ai costi di stampa, acquisto e manutenzione delle stampanti), nell'ambito delle nuove normative alle banche sarà concesso lo scambio di immagini degli assegni bancari. 
+
+In base a questa premessa l'azienda Corvallis ha intuito che il core di un'applicazione bancaria che accetta lo scambio di immagini degli assegni bancari sarà un classificatore di firme statiche accurato, robusto e affidabile. Conseguentemente ha implementato un prototipo per la classificazione di firme statiche.
+
+\subsection{Introduzione alla classificazione di firme statiche}
+\label{2.1}
+La firma è un tratto comportamentale di un individuo e costituisce una particolare classe di scrittura dove lettere o parole possono essere non distinguibili. \'{E} considerata un elemento distintivo avente caratteristiche uniche e personali. Accertare in maniera chiara ed univoca il sottoscrittore di un documento avente forza legale (in questo caso assegni bancari) è di fondamentale importanza. Infatti il destinatario deve poter identificare l'identità del mittente (autenticità) e il mittente non deve poter disconoscere un documento da lui firmato (non ripudio). Nasce quindi l'esigenza di distinguere tra firme false e firme autentiche.\\\\
+Le difficoltà principali nel classificare le firme autografe sono dovute alle variazioni intrapersonali: le firme di una persona possiedono grande variabilità, dovuta allo stato emotivo dei sottoscrittori oppure alla posizione di raccolta, e di conseguenza, se confrontassimo due esemplari di firma di un firmatario questi non sarebbero identici. Invece l'agevolazione cardinale sta nel fatto che le firme di persone diverse manifestano caratteristiche elementari distinte.\\\\
+A seconda del hardware front-end, un sistema di verifica della firma (signature verification system) può essere etichettato come offline o online. Nei sistemi offline la verifica della firma avviene dopo la sottoscrizione della firma. Le uniche informazioni che si possiedono sono di natura statica: l'immagine della firma autografa del sottoscrivente. Al contrario, nei sistemi online, le firme vengono acquisite tramite un dispositivo elettronico (tavoletta grafica) oppure con una penna speciale, capace di memorizzare una sequenza di punti che descrivono velocità, pressione, ritmo, accelerazione e movimento effettuati dal sottoscrittore, non solo l'immagine statica.
+
+\subsubsection{Valutazione delle performance}
+\label{2.1.1}
+La performance di un sistema di verifica della firma si calcola in base alla percentuale di errori che esso commette nel classificare le firme. Esistono due tipi di errori. Questi vengono riassunti dai seguenti indici:
+\begin{itemize}
+\item False Acceptance Rate (FAR), indice di accettazione dei falsi, ossia percentuale delle firme false classificate come genuine;
+\[FAR =
+\frac{nr.\ falsi\ accettati}{nr.\ falsi\ totali}
+\]
+\item False Rejection Rate (FRR), indice di rifiuto dei genuini, ossia percentuale delle firme genuine classificate come false.
+\[FRR =
+\frac{nr.\ genuini\ rifiutati}{nr.\ genuini\ totali}
+\]
+\end{itemize}
+Purtroppo i due indici sono inversamente proporzionali: a una diminuzione del FAR corrisponde un aumento del FRR e viceversa a una diminuzione del FRR corrisponde un aumento del FAR. \'{E} evidente quindi che si deve arrivare a un compromesso: minimizzare il FAR conservando un valore tollerabile per il FRR.
+
+Se si eguagliano i due indici si è in presenza di un nuovo indice: Equal Error Rate (EER). L'EER permette di paragonare in modo veloce l'accuratezza dei sistemi di verifica. In generale, più l'indice EER è basso più il sistema è accurato.
+
+Non sorprendentemente, grazie ai dati biometrici che i sistemi di verifica della firma online possiedono in più, essi sono più accurati e affidabili dei sistemi di verifica della firma statica.
+
+\subsubsection{Tipi di falsificazione}
+\label{2.1.2}
+In letteratura sono stati individuati tre tipi di falsificazione a seconda del grado di preparazione del falsificatore sulla firma che sta cercando di riprodurre:
+\begin{itemize}
+\item falsificazioni casuali (random forgeries), prodotte senza conoscere né il nome del firmatario né la forma della sua firma;
+\item falsificazioni semplici (simple forgeries), prodotte conoscendo il nome del firmatario ma senza avere un esempio della sua firma;
+\item falsificazioni accurate (skilled forgeries), prodotte dopo un allenamento con l'obiettivo di imitare la firma originale nel miglior modo possibile.
+\end{itemize}
+In figura 4 vediamo un esempio di firma genuina e degli esempi di falsificazione della stessa.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.0]{../Logo&Header/esempiForged.png}
+\caption{Tipi di falsificazioni:} (a) firma genuina; (b) falsificazione casuale;\\
+(c) falsificazione semplice; (d) falsificazione accurata
+\end{figure}
+
+\subsubsection{Verifica della firma statica (offline signature verification)}
+\label{2.1.3}
+La verifica di firme statiche appartiene ai problemi del pattern recognition e un tipico sistema di pattern recognition si compone dei seguenti step \cite{2698894}:
+\begin{description}
+\item[(i)] Acquisizione dati, cattura delle immagini firma;
+\item[(ii)] Preprocessing, (to simplify subsequent operations without loosing relevant processing);
+\item[(iii)] Estrazione delle feature,
+\item[(iv)] Classificazione
+\end{description}
+Processo di classificazione generale.
+2698894
+Features.
+
+\subsubsection{Prototipo preesistente}
+\label{2.1.4}
+\subsubsection*{Voto}
+\label{2.1.4.1}
+\subsubsection*{Peso}
+\label{2.1.4.2}
+\subsubsection*{Punteggio}
+\label{2.1.4.3}
+\subsection{Obiettivi}
+\label{2.2}
+Cercare di migliorare il prototipo esistente. Implementare un altro tipo di algoritmo e provarne le capacità.
+\subsection{Aspettative}
+\label{2.3}
+Un solido punto di partenza verso un nuovo classificatore più accurato o comunque verso una unione dei due classificatori, quello esistente prima dello stage e quello implementato durante lo stage.
+\subsection{Vincoli}
+\label{2.4}
+java
+librerie?
+\gls{prova}
+
+\newpage
+
+\section{Attività di stage}
+\label{3.0}
+
+\subsection{Pianificazione}
+\label{3.1}
+
+\subsection{Analisi}
+\label{3.2}
+
+\subsubsection{Ricerca di migliorie del prototipo preesistente}
+\label{3.2.1}
+
+\subsubsection{Scelta di un nuovo classificatore di firme statiche}
+\label{3.2.2}
+
+\subsubsection{Requisiti}
+\label{3.2.3}
+
+\subsection{Progettazione}
+\label{3.3}
+
+\subsection{Implementazione}
+\label{3.4}
+\newpage
+
+\section{Valutazione retrospettiva}
+\label{4.0}
+
+\subsection{Copertura dei requisiti}
+\label{4.1}
+
+\subsubsection{Possibili sviluppi alle attività svolte}
+\subsection{Conoscenze acquisite}
+
+\label{4.2}
+\subsection{Distanza tra conoscenze richieste e conoscenze possedute}
+
+\label{4.3}
+\newpage
+
+%\subsection*{Glossario}
+\printglossaries
+\addcontentsline{toc}{section}{Glossario}
+\label{5.0}
+
+\newpage
+%\subsection*{Riferimenti}
+\begin{thebibliography}{1}
+\bibitem{2698894} Hemanta Saikia, Kanak Chandra Sarma {\em Approaches and issues in Offline Signature Verification System}.
+\end{thebibliography}
+\addcontentsline{toc}{section}{Riferimenti}
+\label{6.0}
+
+\newpage
+
+
+
+
+\end{document}
