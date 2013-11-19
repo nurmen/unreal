@@ -1,0 +1,35 @@
+\select@language {italian}
+\contentsline {section}{\numberline {1}Dominio applicativo}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}Azienda}{5}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Prodotti e clienti}{5}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Banche}{5}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Assicurazioni}{6}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Industria e servizi}{6}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Pubblica Amministrazione}{6}{subsubsection.1.2.4}
+\contentsline {subsubsection}{\numberline {1.2.5}Know Your Customer (KYC)}{7}{subsubsection.1.2.5}
+\contentsline {subsection}{\numberline {1.3}Tecnologie}{7}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Processi interni}{8}{subsection.1.4}
+\contentsline {section}{\numberline {2}Progetto aziendale}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}Introduzione alla classificazione di firme statiche}{10}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Valutazione delle performance}{10}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Tipi di falsificazione}{11}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Verifica della firma statica (offline signature verification)}{11}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Prototipo preesistente}{15}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Obiettivi}{20}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Aspettative}{20}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Vincoli}{20}{subsection.2.4}
+\contentsline {section}{\numberline {3}Attivit\IeC {\`a} di stage}{21}{section.3}
+\contentsline {subsection}{\numberline {3.1}Pianificazione}{21}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Analisi}{21}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Ricerca di migliorie del prototipo preesistente}{21}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Scelta di un nuovo classificatore di firme statiche}{21}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Requisiti}{21}{subsubsection.3.2.3}
+\contentsline {subsection}{\numberline {3.3}Progettazione}{21}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Implementazione}{21}{subsection.3.4}
+\contentsline {section}{\numberline {4}Valutazione retrospettiva}{22}{section.4}
+\contentsline {subsection}{\numberline {4.1}Copertura dei requisiti}{22}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Possibili sviluppi alle attivit\IeC {\`a} svolte}{22}{subsubsection.4.1.1}
+\contentsline {subsection}{\numberline {4.2}Conoscenze acquisite}{22}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Distanza tra conoscenze richieste e conoscenze possedute}{22}{subsection.4.3}
+\contentsline {section}{Glossario}{23}{section*.29}
+\contentsline {section}{Riferimenti}{24}{section*.30}
