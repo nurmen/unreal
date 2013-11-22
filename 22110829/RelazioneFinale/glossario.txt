@@ -1,0 +1,1 @@
+middleware = Con middleware si intende un insieme di programmi informatici che fungono da intermediari tra diverse applicazioni e componenti software.
