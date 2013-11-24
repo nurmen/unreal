@@ -1,0 +1,151 @@
+- i requisiti  saranno classificati in questo modo...
+
+- diagrammi uc
+
+- requisiti
+
+- test ---> evidenza 
+
+
+Progettazione, studio moduli, ereditarietà, incapsulamento, interfacce, 2 paroline sulle librerie? su imageJ in particolare visto che si usa quello, HMM..., DCT?, slant in particolare, ma era già implementato, COG based segmentation
+Offline signature recognition using HMM, DCT based, COg based segmentation 2010
+Implementazione? è stato implementato quanto progettato.
+
+Documentazione esaustiva?
+
+
+
+
+start
+
+Questo è il capitolo centrale della tesi, qui verranno descritte le varie fasi coinvolte nella
+realizzazione del progetto di stage.
+Nel primo paragrafo compare una descrizione degli obiettivi da raggiungere per considerare
+ultimato il progetto, mentre nei seguenti verrà trattata ogni singola fase del progetto.
+Saranno ravvisabili delle discrepanze tra quanto richiesto negli obiettivi(soprattutto per
+quanto riguarda gli strumenti da utilizzare) e quanto risultato dalla fase di analisi dei requisiti
+e studio delle problematiche.
+Questo è motivato dal fatto che gli obiettivi erano stati dettati inizialmente dall’azienda,
+mentre poi indagando a fondo su quelle che erano le reali necessità aziendali e studiando i
+vari strumenti a disposizione per la loro realizzazione, ho preferito realizzare qualcosa di
+leggermente diverso da quanto richiesto inizialmente, perché più adatto a soddisfare i bisogni
+aziendali.
+Tutto ciò ovviamente previa discussione e approvazione dell’azienda.
+
+
+
+
+Nel terzo capitolo, Lo Stage, viene descritta la parte del progetto che è stata
+oggetto dello stage, la pianificazione del lavoro, la formazione e le tecnologie
+utilizzate e poi viene descritto cosa si è fatto durante le fasi di sviluppo del
+sotto progetto oggetto dello stage.
+
+
+
+La terza parte descrive nel dettaglio le attività svolte tenendo conto
+delle scelte operative, delle scelte risolutive adoperate e dei risultati
+ottenuti.
+
+
+Il terzo capitolo descrive le problematiche e gli sviluppi degni di nota che ho affrontato
+durante il periodo di stage. Vengono descritte le tecnologie utilizzate, le attività svolte
+e i loro punti critici per concludere con un’attenta analisi delle problematiche che
+ho incontrato e di come quest’ultime abbiano obbligato il cambiamento del piano di
+lavoro.
+
+
+
+Il terzo capitolo riguarda le attivita di stage.
+Inizialmente viene presentata una panoramica del Piano di Lavoro, dove per
+ogni attivita viene fornita una descrizione generale e viene illustrato il calen-
+dario di lavoro, comprensivo del diagramma di Gantt.
+Nei paragra seguenti ciascuna attivita viene analizzata nel dettaglio, soer-
+mandosi sui punti principali che la compongono, in relazione al calendario
+delle altre attivita.
+
+
+
+il capitolo \Attivita di stage descrive lo svolgimento delle attivita di
+stage, attraverso le varie fasi necessarie alla sua realizzazione;
+
+
+Prima di iniziare lo stage, dalla mia futura tutor ho ricevuto il piano di lavoro secondo quale
+si deve svolgere lo stage. Adesso descrivero in dettaglio la pianicazione iniziale, il preventivo,
+del periodo di stage, fornendo anche il diagramma di Gant preventivato per tutto il periodo di
+stage.
+
+
+
+
+
+
+
+Logica pianificazione reale e realistica:
+
+1.Gantt pianificazione originale del tutor aziendale.
+
+2.Gantt pianificazione settimana 1 e 2, a grana piccola. Settimana 1 e 2 sono state seguite alla lettera. Purtroppo poichè la ricerca della settimana 2 non ha dimostrato incofutabilmente l'esistenza o meno del bug della non indipendenza dalla risoluzione del dispositivo di acquisizione, ci siamo messi d'accordo di investire 1 giorni della settimana 3 per cercare di mettere fine al dilemma. 
+
+3. Abbiamo fallito (e abbiamo anche usato 1 giorno in più, quindi dovrò proporre un nuovo gantt). Non abbiamo dimostrato né l'esistenza né l'assenza del suddetto bug.
+
+Le migliorie individuate all'algoritmo di classificazione erano troppo futili e la loro capacità intrinseca di portare veramente a un'accuracy più elevata era discutibile? Si è deciso dunque di non apportarle.
+
+Inoltre il sottosritto per impegni universitari ha fatto due assenze nei giorni : 19 e 20 settembre. 
+
+In verità il 20 settembre era comunque fuori ? non lo so
+
+Sta di fatto che, avendo studiato (nei due su tre giorni della settimana 3 impiegati per la settimana 3) solo i Statistical-Based classifier di tipo Hidden Markov Model, e poichè in letteratura gli autori riportano valori di accuratezza alti (cit...[][][][]) in seguito (a una discussione con il tutor aziendale) abbiamo ridefinito la Pianificazione rimasta (del tempo rimasto a disposizione), eliminando quindi l'approccio alle reti neurali, le quali non sono state dunque studiate, e abbiamo deciso di "buttarci" sui HMM.
+
+4. Individuazione di librerie HMM ? i requisiti dell'analisi quando nascono?
+domanda inutile? l'analisi di un problema ha a che fare con le tecnologie che lo risolveranno? NO! (analisi settimana 1?, analisi dovrebbe essere cosa fanno i 2 prototipi?)
+quindi è indipendente dalla progettazione! la progettazione è dunque iniziata in fase di studio dei nuovi algoritmi o in fase di ricerca della libreria da utilizzare?
+
+sta di fatto che dovresti aver progettato prima dell'implementazione effettiva? problema della comprensione del modello che descrive le firme?
+
+Comprensione di cosa sono, come si applicano i HMM, librerie individuate, scelta ricaduta su Jahmm perchè capace di trattare anche continuous HMM
+
+I 3 problemi del HMM
+cosa interessa a noi
+cosa vorremmo fare come inizio
+
+Hmm e handwriting
+Hmm e signature verification
+Hmm e signature recognition
+
+
+Progettazione della GUI e dei moduli, facile, seguendo il prototipo preesistente, garantiamo incapsulamento, ereditarietà, utilizzo di interfacce, polimorfismo
+
+5-6. implementazione di un classificatore
+I) problema non recepito in fase di studio ne in fase di progettazione: la libreria jahmm (prima scelta dei progettisti) soffre di cancellazione numerica, nonostante riesca a trattare sia continuous che discrete HMM; implementazione rallentata del tempo necessario a individuare una nuova libreria più stabile, ; prove del programmatore di evitare la cancellazione numerica : impostando i zeri delle matrici caratteristiche di un modello HMM a numeri piccoli, pratica nominata pseudocounts; dopo parecchi tentativi, si è ritornati alla progettazione,
+- pseudocounts,
+- provato a trasformare parti della libreria che avrebbero potuto compromettere il training e la classificazione con problemi di cancellazione numerica da double a BigDecimal... tuttavia questo approccio infantile non ha risolto il problema della cancellazione numerica
+
+scelta ricaduta sulla libreria JScience HMM, questa è in grado di trattare solo i discrete HMM, di conseguenza la progettazione ha individuato i requisiti necessari alla modellazione dei discrete HMM (mah e prima non gliene importava?)
+
+II) inizio implementazione utilizzando la libreria JScience, la libreria JScience purtroppo invalidava le matrici caratteristiche di un modello HMM in seguito all'applicazione dell'algoritmo di Baum Welch (expectation maximization)
+
+lavoro infruttuoso, il progettista ha ricominciato a studiare, il programmatore effettuava cicli iterativi, non era chiaro di dove fosse il problema.
+
+Faccio notare che i documenti studiati non avevano ritenuto di informare i lettori che hanno applicato un algoritmo di B-Welch modificato:  l'algoritmo di Baum Welch originale è pensato apposta per HMM che presentano una topologia ergodica. Nel nostro casto, topologia Left to Right o bakis model, derivata dal latin handwriting, la matrice delle probabilità di transizione iniziale è definita ed è una triangolare superiore, lo stesso vale per la matrice delle probabilità di iniziare nello stato i, nei LtR al tempo 1 ci si trova nello stato 1. 
+
+I hmm con questa topologia richiedono un algoritmo di BW leggermente modificato. (suggerimento datoci dal prof di Probabilità Lorenzo Finesso) In particolare il criterio per massimizzare il modello in input. Baum Petrie ltr
+
+
+Il progettista ha dovuto quindi individuare i metodi da modificare della libreria JScience.
+Il programmatore ha modificato l'algoritmo BW secondo l'input del progettista, altri incrementi casuali; 
+risultati: tuttavia ci si è accorti che anche questa libreria soffre di cancellazione numerica
+
+
+III) il progettista si è rimesso a studiare e ha compreso che una buona libreria tratta tutti i dati/metodi/ algoritmi utilizzando le operazioni con log: somme di logaritmi sono più accurate di moltiplicazioni di numeri piccoli, scaled log blblbl
+
+individuata la libreria jhmmm, il prototipo è stato implementato. domanda non banale: jhmm's bw implementation è conforme?
+
+
+7) hmm scoring, altri problemi, problema aperto, threshold, finalmente qualche risultato apparente, tuttavia forse stiamo sperimentando del overfitting
+
+8) test e documentazione, cross validation durante il training ma da stupido guardavo lo stesso set durante il test! ricordiamo che i test venivano fatti anche sul cross validation set, e quindi invalidava buona parte dei risultati, 
+
+9) fine, test seri, unione delle due classificazioni, approcci migliori all'unione?
+
+
+Conclusione : poichè l'ambito non era conosciuto da nessuno dei due, siamo andati un po' a tentoni? gran bel approccio

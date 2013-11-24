@@ -1,0 +1,19 @@
+- pianificazione troppo dettagliata, togli 2 gantt
+
+- aggiungi viterbi e baum welch
+
+- spiega il dct (impl)
+
+- cog based segmentation (impl)
+
+- numero delle immagini
+
+
+Scrivere la correzione adottata e chiedere gentilmente se era quella sperata.
+
+
+Programmazione orientata agli oggetti
+overlearning
+accettano troppo
+overfitting
+accettano troppo poco

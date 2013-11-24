@@ -1,0 +1,45 @@
+In tutto il contenuto di questa tesi i termini ritenuti di non imme-
+diata comprensione per il lettore sono stati sottolineati e riportati
+nel glossario presente alla ne del documento, includendo con una
+breve descrizione del loro signicato.
+Per facilitare la lettura sono presenti dei link, distinguibili in due
+categorie in base al colore, ovvero blu per i link che rappresentano
+una risorsa esterna, ad esempio un sito web, e rosso per i link in-
+terni al documento, ovvero che permettono di saltare direttamente
+ad una pagina del documento.
+Le citazioni alle fonti sono indicate tra parentesi quadre [ ] tra le
+quali viene inserito un indice numerico che permette di individuare la
+fonte tra la lista riportata nell'appendice al documento denominata
+Riferimenti.
+
+
+
+Al ne di rendere piu leggibile e comprensibile il documento, sono state
+adottate le seguenti convenzioni:
+ corsivo per i termini in lingua straniera;
+ corsivo per gli acronimi, i nomi di organizzazioni e nomi di tecnologie;
+ i nomi di le, di classi e di package Java avranno il font typewriter;
+ grassetto e corsivo per la prima ricorrenza di ogni parola ritrovabile
+in glossario;
+
+
+Per poter migliorare la leggibilit`a del documento, si `e deciso che i
+termini riportati in glossario saranno scritti in carattere corsivo.
+
+
+In questa relazione verranno utilizzate le seguenti convenzioni tipografiche:
+• per mettere in risalto una o più parole verrà utilizzata lo stile italico.
+• per le linee di codice useremo la stile macchina da scrivere
+• i collegamenti a siti web saranno scritti tra parentesi tonde in stile
+macchina da scrivere
+
+
+Nel seguente documento si adopereranno delle convenzioni su alcune tipologie
+di termini con lo scopo di facilitare la lettura:
+ Per i termini in inglese o comunque in lingua straniera verrà utilizzato
+un carattere apposito. Esempi: warning, tool.
+ Per i nomi di tecnologie si utilizzerà un carattere più marcato. Esempi:
+eXist, Java, Microsoft Internet Explorer.
+ Per i nomi di metodi, classi o comunque di costrutti aventi a che fare
+con la sintassi di qualche linguaggio di programmazione si userà un carattere
+corsivo. Esempi: read(), CongurationManager, xsl:transform.

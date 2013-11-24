@@ -1,0 +1,49 @@
+1. L'attività di analisi pianificata per la prima settimana di stage è stata effettuata. Sono stati svolti i punti elencati sotto la colonna "Descrizione", in particolare "Panoramica del software già sviluppato". Il prodotto è sviluppato in JAVA, sotto l'IDE Eclipse.
+
+
+2. Le attività previste per la seconda settimana di stage non sono riuscite a dimostrare se il software è dipendente o meno dal dispositivo di acquisizione immagini. Sono state individuate leggere migliorie per quanto riguarda la verifica di una firma.
+
+3. Per quanto riguarda la terza settimana di stage ho saltato gli ultimi 2 giorni per impegni universitari.
+
+Ho studiato/letto degli esempi di Hidden Markov Model in letteratura relativi all'Offline Signature Verification. Poiché i risultati sembrano migliori dell'approccio attuale (distanze statistiche) intendiamo implementare un prototipo per verificarne gli effetti anche sul nostro database.
+
+I due giorni saltati verranno recuperati in coda.
+
+4. Questa settimana abbiamo implementato un prototipo basato sul metodo di classificazione Hidden Markov Model e sul K-means clustering come indicato nel documento presente al seguente indirizzo "http://www.ijcaonline.org/volume10/number2/pxc3871967.pdf". Non siamo ancora riusciti a farlo funzionare nella nostra realtà. 
+
+L'approccio alle reti neurali è stato rimandato alla prossima settimana.  (non è vero, infatti abbiamo rivisto il piano inconsapevolmente)
+
+5. Come da Lei suggerito abbiamo rivisto le aspettative finali. Abbiamo deciso di non passare alle reti neurali finché il prototipo basato sul metodo di classificazione Hidden Markov Model non sarà terminato.
+
+Questa settimana abbiamo continuato a testare (attravero codice "usa e getta") due librerie Java che implementano i Hidden Markov Model: JaHMM e JScience/HMM. In particolare abbiamo problemi con l'applicazione dell'algoritmo di Baum-Welch per massimizzare il modello iniziale. Spesso restituisce in output modelli le cui matrici (probabilità di transizione, probabilità di emissione e probabilità dello stato iniziale) sono nulle.
+
+
+6. Abbiamo capito l'errore commesso con l'applicazione dell'algoritmo di massimizzazione Baum-Welch grazie alla dritta del professor Finesso. Applicavamo l'algoritmo generale per i Hidden Markov Model di tipo ergodico (fully connected) mentre i nostri modelli sono di tipo left to right.
+
+Per utilizzare l'algoritmo di Baum-Welch, al fine di massimizzare i Hidden Markov Model di tipo left to right, dobbiamo modificare parte della sua implementazione.
+
+Abbiamo iniziato a modificarlo. Manca il punto più sensibile: le formule di re-estimazione. Riteniamo che una buona implementazione possa portare dei risultati.
+
+7. Questa settimana siamo riusciti ad avere dei risultati abbastanza ragionevoli per quanto riguarda il calcolo della probabilità che una firma sia stata generata da un Hidden Markov Model.
+
+Stiamo riscontrando un altro problema: alcuni modelli addestrati sono caduti nell'overfitting (eccessivo adattamento) e la loro capacità di adattarsi a firme non visionate è stata compromessa.
+
+Stiamo cercando una soluzione a questo problema e abbiamo iniziato a preparare l'ambiente di test.
+
+8. Questa settimana abbiamo ultimato l'ambiente di test. Riteniamo di aver limitato il problema dell'eccessivo adattamento (overfitting) utilizzando la cross-validation durante il training.
+
+Abbiamo effettuato alcuni test variando il valore dei parametri in input al prototipo. I risultati sono stati discreti: siamo partiti da un 75% di firme classificate in modo corretto e ora stiamo oscillando intorno al 83% su un database di 750 firme (metà genuine e metà skilled forgery).
+
+Crediamo che una ricerca più approfondita del Hidden Markov Model che descrive le firme di un firmatario possa portare risultati più accurati.
+
+Abbiamo iniziato a documentare. Confronteremo le performance dei due prototipi (il prototipo basato su distanze statistiche, e il prototipo basato sui Hidden Markov Model) e valuteremo se è il caso di unirli in un unico programma più affidabile.
+
+
+Fine. In questi giorni abbiamo confrontato le performance dei due classificatori. Abbiamo sperimentato una classificazione comune: usando l'esito del classificatore basato sui Hidden Markov Model, modifichiamo i punteggi parziali delle valutazioni del classificatore basato su distanze statistiche di una certa percentuale. 
+La classificazione delle firme sembra migliorata leggermente.
+
+Tuttavia avremmo voluto trovare altri approcci.
+
+Per quanto riguarda i test, alcuni dovranno essere rifatti con maggiore rigore. (Mi hanno lasciato una copia dei prototipi da usare a questo scopo).
+
+

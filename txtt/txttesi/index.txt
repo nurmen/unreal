@@ -1,0 +1,109 @@
+No standard per redigere: obblighi, consigli, suggerimenti.
+Obblighi:
+4 capitoli indipendenti composti da sezioni
+- capitolo 1. realtà aziendale, dominio applicativo, dove si è andati a fare lo stage? prodotticlienti, conservatori? evoluzioni? tecnologie? processi interni? svilluppo, documentazione, verifica e validazione, manutenzione, organizzazione del lavoro.
+
+- capitolo 2. comprensione del luogo di lavoro; come mai l'azienda svolge stage? 2 motivi: cose non pagate ma strategiche per il futuro; motivo dell'azienda a proporre uno stage; ragioni prima/a priori dello stage, aspettative d'uso dai risultati; 
+vincoli che l'azienda ha posto sullo stage;
+aspettative;
+punto di partenza, esistenza o meno di prodottu/prototipi simili.
+
+- capitolo 3. (racconto stage, come se fosse un microprogetto von un unico resposanbile, libero di cercare requisiti e soluzioni, java vincolato, vincoli aziendali, attività svolte : analisi requisiti, piano di progetto, piano di qualifica, specifica tecnica, norme di progetto? SOLO LE COSE SIGNIFICATIVE: esempi, campioni per dimostrarre: nalisi dei requisiti, identificabili univocamente, tracciabili, semplici, completi, univoci, elementari:::::: implicano un tracciamento con copertura requisiti, tabellare o grafico, quello che vuoi; diagrammi ed esempi in stile professionale
+
+- capitolo 4. valutazione retrospettiva, a posteriori: 3 domande
+sezione1. Hai raggiunto gli obettivi aziendali? Si/No? quanto? come? perchè? motiva!
+
+sezione2. Quanto hai appreso/sei maturato professionalmente? (tecnologie? elaborazione immagini! ha, cosa sai fare di più? tirar fuori numeri dalle caratteristiche (feature) delle immagini, dct, slant, binarizzazione, croping, segmentazione in java; imparato a collaborare di più? [non scrivere che sai scrivere un pochino meglio] metodo di lavoro modificato?
+
+sezione3. le conoscenze pre stage erano sufficienti o no allo svolgere il progetto di stage? confrontando informatico [nonsicapiscecosahaiscritto] agli insegnamenti dati in un'aula
+
+distanze ragionevoli sulla conoscenza colmabile con lo stage? (25-30%, vuol dire che produce 70/100), utili conoscenze nel percorso triennale, capacità analisi critica autovalutazione conoscitiva
+
+Problemi- elaborazione immagini in java (in qualsiasi linguaggio direi), hidden markov model e algoritmi correlati
+
+Inoltre serve un glossario
+
+Ed un elenco fonti informative luoghi/documenti letti/usati per capire cosa
+
+almeno circa al massimo 70 pagine di aspettazione di cui il capitolo 3 dovrebbe pesare/corrispondere a 40-45% del tutto
+
+Stile narrazione: tecnica, frasi semplici/brevi, meno triste e noiosa se accompagnata da figure (che in media corrispondono a 300 parole) diagrammi, immagini, tabelle
+
+1. Dominio applicativo
+(L'azienda. Aree di specializzazione) [Azienda ospitante; breve storia]
+1.1 Prodotti aziendali
+1.2 Tipi di clienti (magari i prodotti lasciano intendere i tipi di clienti)
+1.2.1 Evoluzione prodotti
+1.2.2 Evoluzione normativa (nell'ambito delle nuove normative alle banche sarà concesso lo scambio di immagini degli assegni bancari. cit)
+[Lo scenario del mercato]
+1.3 Tecnologie (di riferimento)
+1.4 Processi interni 
+1.4.1 Sviluppo
+1.4.2 Documentazione
+1.4.3 Verifica e validazione
+1.4.4 Manutenzione
+1.4.5 Organizzazione del lavoro
+1.4.6 Interazione azienda-clienti
+
+
+2. Progetto aziendale/(e strategia) (definizione del problema)
+[Presentazione del progetto? Descrizione delle parti che compongono il progetto]
+[Introduzione alla classificazione di firme statiche] punti di contatto/lontananza con la classificazione di firme biometriche
+[Problemi variazioni intrapersonali nelle firme di un firmatario]
+[Far - Frr - EER? informazioni in quel senso?
+Panoramica del software già sviluppato.
+[Spiegazione prototipo distance-based classifier] (tra i statistical-based classifier)
+Quanto bene va spiegato? è anche oggetto di studio come parte iniziale dell'attività di stage...
+[Struttura interna, Algoritmo di classificazione?, funzionamento, funzionalità, componenti principali, utilizzo (non lo usano ancora...), benefici introdotti?]
+[Feature immagini, operazioni sulle immagini, binarizzazione, croping, pulizia firme?]
+Librerie? imageJ, imageMagick?
+2.1 Motivazioni (ed obiettivi) (esiste qualcosa di meglio?)
+[Prerequisiti?]
+2.2 Obiettivi (
+2.3 Aspettative
+2.4 Vincoli (aziendali) (applicativi: strumentali e temporali)
+(Tecnologie e strumenti)
+[Strategia aziendale][svilluppo interno][Uno stagista][Ciclo di vita del software adottato]
+2.5 Progetto di stage
+2.5.1 Descrizione
+2.5.2 Facilitazioni e supporti
+2.5.3 Strategia e pianificazione
+2.5.4 Distribuzione delle ore
+2.5.5 Verifica e validazione (interazioni aziendali e verifiche interne)
+(Scelte operative)
+
+3. Attività di stage 
+3.0 Descrizione? ancora 
+[Suddivisione delle ore]
+3.1 Pianificazione [Formazione - Svilluppo- Test e documentazione]
+3.2 Analisi dei requisiti [Descrizione requisiti - Diagramma use-case - Ulteriori considerazioni]
+[analisi - studio dominio applicativo - formalizzazione del prodotto - classificazione dei requisiti e tracciamento - assegnazione dei requisiti agli incrementi ]
+[revisione obiettivi e piano di lavoro] [Attività svolte - comunicazione cliente ed azienda - analisi del prototipo distance based classifier?, è un'altro tipo di analisi?]
+[analisi - progettazione - codifica e manutenzione]
+[analisi- progettazione e miglioramento]
+[obiettivi- vincoli tecnologici/codice - panificazione- formazione e tecnologie - analisi - progettazione - implementazione - verifica]
+3.3 Progettazione (e svilluppo) [Architettura - Scelte progettuali - M - V - C]
+[progettazione architetturale - archittetura]
+[scelta delle tecnologie - java? eclipse? librerie imageJ, jahmm, jhmm, jscience, - studio, installazione ed integrazione delle tecnologie - progettazione di dettaglio, sviluppo, verifica e valdiazione]
+3.4 [Modalità d'uso] (spiegare la piccola gui?, e la lettura dei cvs?, interpretazione, il funzionamento prototipale per osservarne/valutarne le capacità)
+3.5 Problematiche e risultati ottenuti [Consuntivo]
+
+4. Valutazione critica retrospettiva [Valutazione]
+4.1 Raggiungimento obiettivi aziendali? (future work potrebbe andare qui? idee in letteratura che potrebbero migliorare il risultato raggiunto?)
+4.1.1 Risultati? (si poteva fare meglio, si può fare meglio)
+4.1.2 Future work
+[Valutazione quantitativa e qualitativa sul lavoro solto]
+[Valutazione personale]
+[Soddisfacimento dei requisiti]
+[Possibili sviluppi alle attività svolte- eccolo]
+4.2 Conoscenze/abilità acquisite (elaborazione immagini, modellare processi reali utilizzando i modelli di markov?
+[Livello di apprendimento ottenuto dallo stage- cosa vuole dire?]
+4.3 [Proposte per la didattica?] Conoscenze maturate durante il corso di studi erano sufficienti per il progetto di stage? In quale percentuale, competenze mancanti?
+[Università e mondo del lavoro]
+[Valutazione del corso di studi]-[Proposte di soluzioni]
+[Riflessione retrospettiva sulle attività][Variazioni sulla pianificazione ed il ciclo di vita][Criteri per la valutazione delle tecnologie]
+[Soddisfazione dell'esperienza di stage]
+[Valutazioni tra conoscenze richieste e conoscenze possedute? meglio divario?]
+[Preparazione accademica sulle attività di stage, titoletto ambiguo]
+[Argomenti trattati durante lo stage e non previsti all'università, più che università direi corso di laurea]
+[Considerazioni personali conclusive sullo stage]

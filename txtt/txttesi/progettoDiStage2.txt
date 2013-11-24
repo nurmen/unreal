@@ -1,0 +1,72 @@
+start this way:
+
+Questo capitolo si prefigge di mostrare al lettore l'ambito in cui si colloca il progetto di stage proposto dall'azienda Corvallis. Inizialmente verranno presentati i motivi che hanno portato alla nascità del progetto. A seguire sarà effettuata una panoramica sulla classificazione delle firme statiche. In seguito verrà descritto il prototipo/classificatore preesistente al progetto di stage. Infine verranno illustrati gli obiettivi, le aspettative e i vincoli del progetto aziendale a cui ho preso parte.
+
+
+brain storming.
+
+
+problemi della non dematerializzazione, costo!
+dematerializzazione come inizio!, dematerializzazione degli assegni, legge!
+
+ma poichè si vuole dematerializzare e poichè la legge lo permette...
+
+risparmio costi mantenimento archivi, lentezza/difficoltà di verifica di un vecchio documento, richiesta documento all'archivio...
+
+vantaggi dematerializzazione:
+-La dematerializzazione dei documenti porta tre importanti vantaggi: il risparmio relativo ai costi di stampa, acquisto e manutenzione delle stampanti; la possibilità di centralizzare il trattamento delle pratiche e i processi di lavoro gestiti dai knowledge worker, consentendo di archiviare documenti elettronici in maniera univoca, facilmente condivisibili e reperibili attraverso sistemi automatici di ricerca; l’opportunità di seguire più attentamente ogni procedimento amministrativo per capire dove incontra difficoltà o fermi nella lavorazione. I documenti cartacei corrono sempre il rischio di "perdere la loro strada", quelli digitali sono sempre disponibili. La dematerializzazione e la gestione documentale riducono la necessità di lavorare attraverso archivi fisici dislocati magari lontano dal luogo in cui servono, abbassano i costi di stampa, ricerca e trasferimento delle pratiche, rendono più rapida e sicura la loro gestione, consentendo l’uso di strumenti di collaborazione, reportistica, archiviazione, cifratura o protezione digitale, invio tramite posta elettronica, spedizione al cittadino tramite raccomandata online.
+
+tipi di classificatori hardware con poca enfasi sulla  classificazione biometrica.,
+
+performance far frr eer, il biometrico è più accurato... online, offline... la letteratura ne è piena...
+
+firme statiche con più enfasi, -> problematiche, features
+overview classificatori
+->>>> prototipo statistical based di tipo distance based classifier
+
+performance sue -> domanda che nasce ? si può fare di meglio? migliorando l'attuale algoritmo di classificazione? implementando altri algoritmi di classificazione - sempre statistical based? (hmm, svm, artifical neural networks...)?
+
+da cui obiettivi : trovare migliorie al prototipo preesistente, implementare un nuovo prototipo classificatore e verificarne/provarne la validità.
+
+Aspettative: più che riuscire a migliorare l'attuale algoritmo (scetticismo?) ci aspettiamo che altri approcci portino risultati simili o migliori alle performance manifestate dal prototipo preesistene (distance based classifier). 
+
+Implementare un "nuovo" prototipo "funzionante"?
+
+vincoli tecnici: linguaggio da utilizzare java
+librerie suggerite per l'elaborazione delle immagini: imageJ, imageMagick
+
+vincoli prestazionali: utilizzare meno specimen di firma (genuini) possibili nella fase di training del classificatore.
+
+
+
+
+Il tirocinante sarà seguito dal suo tutor nella fase di apprendimento, per la progettazione e implementazione di nuove caratteristiche in un algoritmo per il confronto delle immagini di firma in quant onell'ambito delle nuove normative sarà concesso alle banche lo scambio di immagini degli assegni bancari.
+
+Il tirocinante sarà impegnato nello studio e nella applicazione degli algoritmi possibili, nell'implementazione di un prototipo su cui effettuare dei test sulla base di database di immagini campione e nell'estrazione e pulizia di immagini di firma provenienti da documento reali.  L'ULTIMA PARTE NON è STATA FATTA, ERA OPZIONALE, TEMPO MANCANTE
+
+
+
+-effettuare un'esaustiva descrizione dei offline signature verification system va oltre i fini di questa relazione. Dunque, mi limito a descrivere i concetti fondamentali allo scopo di rendere più chiaro e comprensibile il lavoro svolto.
+
+
+
+
+ e spiego brevemente soltanto quelli che vengono trattati in questa relazione.\\\\
+Sono state individuate tre tipologie di approcci:
+\begin{enumerate}
+\item Template Matching
+	\begin{itemize}
+	\item Dynamic Time Warping
+	\end{itemize}
+\item Statistical-based
+	\begin{itemize}
+	\item Distance-based
+	\item Hidden Markov Models (HMM)
+	\item Neural Networks (NN)
+	\item Support Vector Machines (SVM)
+	\end{itemize}
+\item Structural
+	\begin{itemize}
+	\item Syntactic approach
+	\end{itemize}
+\end{enumerate}

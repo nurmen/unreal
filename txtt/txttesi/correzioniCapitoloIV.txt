@@ -1,0 +1,272 @@
+Questo è il capitolo conclusivo della relazione sullo stage. Inizialmente riporta alcuni dei risultati ottenuti, la copertura dei requisiti, e una valutazione retrospettiva di quanto è stato fatto durante il periodo di stage. In un secondo tempo elenca le conoscenze maturate durante lo stage. Infine espone delle considerazioni personali in merito al confronto tra le conoscenze/capacità acquisite alla fine del corso di studi e le conoscenze/capacità richieste dallo progetto di stage effettuato.
+
+
+
+
+
+\textbf{Collaudo}
+Il collaudo fa parte delle procedure di assicurazione della qualità. Non va confuso con il \emph{debugging}. Lo scopo del collaudo è di rilevare i difetti tramite i malfunzionamenti, al fine di minimizzare la probabilità che il software rilasciato abbia dei malfunzionamenti nella normale operatività.
+
+
+Copertura dei requisiti:
+
+Mi ritengo soddisfatto del modello di ciclo di vita adottato perchè ha specchiato in modo naturale le fasi del ciclo di vita del prototipo realizzato. Analisi e progettazione architetturale una volta definite non sono state ripetute, e come già accennato la realizzazione è stata fatta in modo incrementale.
+
+Test.  colaudo
+La fase di test e collaudo serve a verificare che il prodotto software sia corretto.
+
+Vediamo di seguito una tabella riassuntiva dei requisiti individuati in fase di analisi e dei requisiti effettivamente soddifatti dal prototipo implementato.
+Il collaudo fa parte delle procedure di assicurazione della qualità. Non va confuso con il \emph{debugging}. Lo scopo del collaudo è di rilevare i difetti tramite i malfunzionamenti, al fine di minimizzare la probabilità che il software rilasciato abbia dei malfunzionamenti nella normale operatività.
+
+Purtroppo il requisito di qualità: il software deve classificare correttamente l'80% delle firme, non è stato raggiunto. fa vedere l'immagine con 69%
+
+Di seguito riporto alcuni risultati conseguiti dal prototipo realizzato e congetturo su possibili soluzioni alternative a quelle adottate durante la realizzazione del prototipo. [come suggerito in...]
+
+
+1. Scelta delle feature da utilizzare
+2. Utilizzare più features insieme
+3. Scelta continuous HMM, meno perdità di informazione
+4. different cross validation, pseudocounts or...
+5. Normalizzazione del raw score ricevuto da P(O|lambda)
+6. Unire una classificazione congiunta sulla base delle risposte di più classificatori HMM che hanno alla base features distinte
+7. Cercare il numero adatto di stati nascosti per il modello di un sottoscrittore utilizzando degli genetic algorithms.
+
+Di seguito vengono riportati dei risultati sulla classificazione congiunta dei due classificatori
+Notiamo leggere migliorie nell'accuracy globale. Il sistema adottato da un peso alla classificazione hmm based, e questo agisce come moltiplicatore su ogni punteggio parziale del classificatore distance based pressistente. Purtroppo il peso che si da alla classificazione HMM sembra dipendente dal database su qui si effettua il training. Si nota che intorno al 25% porta i risultati migliori.
+
+utilizzando le firme che l'hmm seleziona, il training del distance based classifier migliroa
+
+Si dovrebbero valutare altri metodi di classificazione congiunta che rendano le due classificazioni indipendenti dal database in uso.
+
+
+Come prevede il modello incrementale un ciclo iterativo all'interno di un incremento è dato dalle attività di{7}:
+\begin{itemize}
+\item progettazione di dettaglio;
+\item codifica;
+\item prove.
+\end{itemize}
+
+
+Programmazione orientata agli oggetti
+vantaggi
+
+
+
+
+Conoscenza acuiqisite, elaborazione immagini 2d, segmentazione preprocessing, feature extraction, capacità di relazionarsi
+utilizzare java a più alto livello
+
+
+
+
+Divario tra conoscenze richieste e conoscenze realmente possedute.
+prof marchiori nomino i processi markoviani durante la spiegazione del pagerank di google.
+
+tuttavia non è un divario, un corso di informatica non può trattare tutto, sarebbe un problema intrattabile, un corso di informatica deve mettere delle basi solide, costruire le fondamenta , tramandare il metodo scientifico, non dare nulla per scontato, studiare, dimostrare, spiegare come si deve approciare a problemi comuni per riuscire a creare delle menti in grado di adattarsi ad ogni problema. Il corso di informatica è riuscito a fare questo, ha raggiunto il suo intento. Tuttavia è più importante il percorso che la metà, capire veramente, in profondità le ragioni, le problematiche alla base del problema che si sta affrontando, saper prendere delle decisioni con criterio, dopo aver valutato diverse soluzioni, riuscire a paragonare diverse soluzioni, comprendere le best practice
+
+
+esso fornisce i strumenti necessari per affrontare i problemi le basi, sta a noi addatarci 
+
+Se dovessi rispondere alla domanda: Uno studente può lavorare nell'informatica finito una volta terminati gli studi, risponderei di si.
+
+
+Molte tecnologie utilizzate nel corso del progetto, come Web-
+Socket, WebRTC e Java, mi erano precedentemente note grazie
+al progetto di Ingegneria del Software; quel progetto mi ha inoltre
+fornito la forma mentis necessaria ad acquisire efficacemente familiarità
+con nuovi strumenti, come, in questo caso, Scala, Play
+e Ext JS .
+
+
+L’esperienza generale dello stage è stata certamente molto positiva.
+Si è trattato infatti di una prima introduzione al mondo del
+lavoro che mi ha permesso sia di sperimentare il funzionamento
+interno di una azienda, al di fuori del contesto universitario, sia
+di imparare nuovi utili strumenti.
+
+Concludendo, lo stage è un’ottima ed indispensabile conclusione
+del corso di laurea, sia per mettere in pratica le conoscenze
+apprese durante il corso al di fuori dell’ambiente didattico,
+sia per toccare da vicino la mentalità del mondo del lavoro.
+
+
+
+Durante lo svolgimento dello stage si sono potute applicare le conoscenze già
+acquisite per la gestione di progetto e per il miglior sviluppo possibile dell'applicazione,
+potendo provare sul campo l'importanza dell'analisi dei requisiti e della
+validazione, i beneci di una buona ed attenta progettazione dell'architettura e
+di una strategia formale ed estensiva di test del prodotto.
+Sul piano di realizzazione del prodotto e dell'interfaccia utente, si sono potute applicare
+le conoscenze acquisite sullo sviluppo di interfacce web uide, sui percorsi
+utente e, soprattutto, sull'accessibilità di prodotto e sull'importanza del corretto
+uso degli standard web, preferendo sempre la semantica alla presentazione.
+In generale, credo che la preparazione accademica precedente all'attività di stage
+sia stata adeguata perché potessi arontare al meglio il progetto, non tanto
+nelle conoscenze fornite quanto piuttosto nel metodo insegnato durante tutti i
+corsi del percorso di laurea triennale. Ho potuto informarmi ed imparare tutte le
+nuove tecnologie necessarie per svolgere il progetto autonomamente, grazie alle
+basi culturali fornite che mi hanno permesso di poter comprendere nuovi sistemi
+nel modo migliore. Credo questo, l'avere gli strumenti per la comprensione autonoma
+di nuove tecnologie e nuovi approcci a quanto studiato, sia il bagaglio più
+importante lasciato dal percorso di laurea triennale, più che lo studio di speci-
+che tecnologie e dettagli, che sono comunque strumenti per la crescita personale.
+
+
+Sono stato in grado di mettere in pratica le competenze acquisite durante gli studi svolti e di
+ampliarle sia in ambito tecnico/pratico che per quanto riguarda l'analisi ed il problem-solving.
+4.3 Universita e mondo del lavoro
+Come esposto nella sezione precedente, le conoscenze fornitemi dal corso di laurea che ho
+frequentato non mi sono state sucienti a svolgere lo stage da me scelto e dubito che sareb-
+bero state sucienti per qualsiasi altro stage. Questo perche non e possibile imparare tutto
+il necessario in un tempo cos breve e per la continua evoluzione che caratterizza il mondo
+dell'informatica.
+Premesso cio, ritengo che il compito principale di questa istruzione a livello universitario sia
+quello di fornire i concetti di base delle tecnologie piu diuse e comuni senza pero focalizzarsi
+troppo nello specico dello strumento usato. Sotto questo punto di vista posso ritenermi sod-
+disfatto del metodo seguito nella maggior parte dei corsi, infatti le tecnologie e i linguaggi di
+
+
+programmazione trattati sono stati usati prevalentemente come casi di studio.
+La parte pratica di tali corsi (spesso progetti o laboratori) e stata molto utile per prendere con-
+denza non solo con la singola tecnologia ma soprattutto con le idee e i concetti su cui si basa
+tale tecnologia. Di conseguenza, in questi anni di studio, ho potuto accumulare un bagaglio di
+esperienze che mi hanno insegnato a trovare soluzioni ai problemi proposti e il corso di ingeg-
+neria del software ha contribuito enormemente a rendere rigoroso tale metodo di lavoro. In tale
+occasione infatti ho potuto correggere il metodo di lavoro che avevo adottato rendendolo piu
+formale e avere suggerimenti e linee guida su problemi che non avevo ancora avuto occasione
+di arontare. Da quanto ho potuto vedere, il mondo del lavoro richiede spesso la conoscenza
+particolare degli strumenti utilizzati e da questo punto di vista non viene sicuramente aiu-
+tato dal metodo universitario. D'altra parte la formazione universitaria ha un approccio piu
+lungimirante, in quanto, non focalizzandosi sul particolare ma sulle idee di base, semplica e
+velocizza di molto lo studio di nuove tecnologie, permettendo di adattarsi tramite una costante
+formazione anche da autodidatta, alle richieste del mercato in continuo cambiamento.
+Ritengo quindi che l'attivita di stage sia una delle piu importanti del corso di laurea, in quanto,
+al di la del fatto che permetta un primo contatto con il mondo del lavoro e spesso termini con
+proposte di assunzione. Il mio scopo principale attualmente e l'apprendere in modo strutturato
+i concetti e relazionarli con le conoscenze gia in mio possesso, imparare ora una particolare
+tecnologia alla perfezione non mi interessa in quanto potrei tranquillamente studiarla in futuro
+da autodidatta se cio si rendesse necessario per motivi lavorativi.
+
+Le conoscenze che ho acquisito in sede universitaria inerenti alle tecnologie utilizzate
+nello sviluppo del progetto di stage derivavano principalmente dai corsi di Programmazione
+ad Oggetti, Programmazione Concorrente e distribuita e Ingegneria del Software.
+Durante il periodo dello stage, invece, le competenze che ho appreso riguardano:
+
+
+---------------
+Sostanzialmente lo stage mi ha portato a conoscere in modo molto piu appro-
+fondito il linguaggio Java. Nel corso degli studi universitari avevo incontrato
+questo potente linguaggio di programmazione sotto vesti dierenti rispetto
+a quelle che ho visto nello sviluppo di iPol.
+-------------------------------------
+Il lavoro di squadra viene ampiamente sviluppato durante
+il terzo anno di studi, nel corso di Ingegneria del Software. Il progetto didat-
+tico che gli studenti devono arontare in questo corso e sicuramente molto
+formativo, in quanto porta gli studenti a lavorare in team per superare le
+dicolta di un progetto molto ampio. Allo stesso tempo pero, secondo il mio
+punto di vista, alcuni aspetti del progetto vengono recepiti dagli studenti
+come una forzatura. Ad esempio, l'analisi dei requisiti e la progettazione
+del software possono sembrare delle perdite di tempo, in quanto mai prima
+del corso di Ingegneria ci era stata presentata una metodologia cos artico-
+lata per arontare la programmazione di un software. Credo sia necessario
+introdurre questi concetti nei primi anni di studio, ad esempio all'inizio del
+secondo anno, invogliando cos gli studenti a capire l'importanza di tali at-
+tivita e scoraggiandoli dal programmare immediatamente appena viene pre-
+sentato loro un problema. Il corso di Ingegneria in parte fa questo, cercando
+di insegnare un metodo per arontare un problema da risolvere dal punto
+di vista informatico ma, secondo me, lo fa troppo tardi, quando gli studenti
+sono gia formati su linguaggi e algoritmi di programmazione e sono cos por-
+tati ad agire concretamente prima di meditare attentamente sul problema.
+Se la metodologia introdotta dal corso di Ingegneria fosse presentata prima
+del terzo anno, gli studenti potrebbero arontare qualsiasi progetto didattico
+con l'adeguata base tecnica.
+-------------------------------------
+
+
+
+Documentazione codice!
+A.4 Standard della documentazione del codice
+Avendo programmato in Java, si è deciso di sfruttare la modalità di documentazione
+usata da JavaDoc. Ogni classe Java prodotta contiene un'intestazione
+che ne descrive sinteticamente le peculiarità, lo stesso vale per i
+metodi e per i campi dato sia pubblici che privati.
+Per quanto riguarda la nomenclatura di metodi, di classi, di package e variabili
+e l'indentazione del codice si sono seguite le norme di codica tipiche del
+linguaggio Java.
+
+OBJECT ORIENTED PROGRAMMING
+------------------------------
+Lo stage determina il passo intermedio tra la scuola e il mondo del lavoro e solo con
+questa esperienza o comunque altre attività lavorative è possibile integrarsi in questo
+ambiente. In questa esperienza, la prima presso un'azienda informatica, sono entrato
+in diretto contatto con le dicoltà che animano un'azienda quotidianamente. I
+problemi non sono strettamente di natura informatica, ma anche di gestione del
+personale e organizzazione del lavoro. La struttura dell'azienda non è predisposta per
+sviluppo di progetti, in modo tale quindi da dedicare le risorse alla sole attività di
+progetto; l'azienda è caratterizzata da risorse che alternano le mansioni di una risorsa
+dall'analisi allo sviluppo del software, dall'incontro con i clienti alla manutenzione di
+software ad essi venduti. Da questo ne ricavo che è indispensabile avere
+un'organizzazione delle risorse e dell'ambiente di lavoro al ne di ssare le funzionalità
+competenti una deternminata risorsa, le responsabilità, le procedure e le regole. Dallo
+stage ho appreso l'importanza delle conoscenze acquisite grazie all'università, ma ho
+soprattutto capito che la laurea è un traguardo importante, ma in questo settore ciò che
+vince è l'esperienza o meglio le best practice. Per quanto riguarda il progetto di stage
+sono rimasto soddisfatto del risultato ottenuto, inoltre la manutenzione di software ha
+come pregio la possibilità di analizzare le scelte architetturali di altri team, permettendo
+quindi di valutare le scelte implementative, pensando a strategie diverse di sviluppo; il
+tutto per un laureando è molto utile perchè permette di imparare da altri puntando
+necessariamente al miglioramento continuo. Quindi la mia esperienza di stage si è
+alternata da fasi monotone di debugging, anche un po noiose, ma indispensabili per
+apprendere l'architettura del sofware a fasi di modica dell'applicativo che hanno
+permesso di portare avanti il ciclo di vita del software di OPP.
+32 di
+
+
+
+STAGEEEEEEEEEEEEEEEEEEEEEEEEEE ESPPLORATIVO
+
+Anche se i risultati ottenuti durante lo stage non sono proprio
+quelli che ci si aspettava, l'argomento arontato mi ha permesso di
+applicare alcuni argomenti studiati a lezione a realta meno teoriche.
+Inoltre, considerando che durante lo stage ho arontato argomen-
+ti riguardanti le comunicazioni su rete mediante diversi protocolli,
+i File System e l'impiego di database MySQL, questo si e rivelato
+molto attinente al mio corso di studi.
+La preparazione accademica si e dimostrata coerente ed ecace an-
+che se non sucente per arontare alcune problematiche che mi sono
+trovato di fronte.
+Gli obbiettivi che avevamo pensato di raggiungere erano ragionevoli
+e coerenti con la mia preparazione accademica, ma a causa dell'in-
+stabilita e della dicolta di congurazione di OpenNebula e stato
+impossibile raggiungerli. Avendo puntato all'utilizzo di uno stru-
+mento piu stabile gli stessi obbiettivi sarebbero probabilmente stati
+raggiunti con successo e senza molte dicolta.
+Comunque gia all'inizio si sapeva che questo doveva essere uno stage
+\esplorativo" con l'obbiettivo di mettere alla prova uno strumento
+sconosciuto e solo in secondo piano si pensava di applicarlo a realta
+complesse. Come si e potuto capire dalla lettura di questo docu-
+mento tale strumento si e dimostrato non molto stabile e quindi
+assolutamente non consono all'utilizzo da parte di un utente con
+una scarsa esperienza in materia.
+
+
+
+
+SSSSSSSSSSSSSSSSSSSSSSSSSSS
+Scegliendo un progetto di stage “alternativo” rispetto le pi`u classiche progettazioni
+software e sviluppi di codice, ho potuto estendere le mie conoscenze anche
+su argomenti teorici di cui non `e stata fatta, per motivi di tempo, un’accurata descrizione
+durante il corso di studi; sono inoltre venuto a contatto con tecnologie
+a me sconosciute, il cui apprendimento ha sicuramente ampliato il mio personale
+bagaglio culturale e tecnico, grazie all’utilizzo di JIRA, al contatto con eXo e all’analisi
+di KonaKart.
+La mia valutazione complessiva dell’utilit`a dello stage `e dunque molto positiva,
+avendo questo permesso di consolidare e migliorare quanto appreso dal corso di
+laurea.
+
+
+
+Rilevo di essenziale importanza
+offerte formative e pseudo lavorative come quelle proposte durante l’annuale
+evento STAGE IT: l’opportunit`a che l’universit`a di Padova offre diventa essenziale
+per l’introduzione post laurea al mondo del lavoro.

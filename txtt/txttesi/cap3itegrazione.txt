@@ -1,0 +1,61 @@
+\subsubsection*{\emph{Feature extraction}}
+\label{3.3.3.5}
+Come anticipato precedentemente le \emph{features} che ho scelto per l'implementazione del prototipo sono l'\emph{axial slant} e la \emph{Discrete Cosine Transform}. L'\emph{axial slant} è una \emph{feature} preesistente al progetto di stage.\\\\
+Di seguito spiego brevemente cosa è la \emph{Discrete Cosine Transform}.
+
+
+Tracciamento? Progettazione, riutilizzo(sodisfatto utilizzando moduli del prototipo preesistente) di alcune funzionalità, tipo preprocessings..., però il CoG segmentation non c'era, COG segmentation con source img e spiegazione dal foglio, e feature extraction : slant, dct ...
+
+Prototipazione rapida? per avere il prima possibile riscontri su come si sta andando?
+
+MVC 2 paroline?
+MM
+HMM - the 3 general questions, our questions and answers!
+- forward backward
+- baum welch
+- viterbi's path
+Centre of gravity based segmentation
+Slant, riutilizzo del loro algoritmo (ma spiegare cosa fa)
+Dct, spiegazione
+
+
+\subsubsection{Architettura di dettaglio}
+\label{3.3.4}
+Le classi individuate e i requisiti che mappano sono riportate in tabella 3.
+\begin{longtable}{|c|p{7cm}|c|}
+\caption{Classi}
+\label{tab:Classi} \\
+\toprule
+\multicolumn{1}{|c}{\textbf{\underline{Nome classe}}} & \multicolumn{1}{|p{7cm}}{\textbf{Descrizione}} & \multicolumn{1}{|c|}{\textbf{Requisiti}}\\
+\midrule
+\endfirsthead
+\multicolumn{2}{l}{\footnotesize\itshape\tablename~\thetable: continua dalla pagina precedente} \\
+\toprule
+\multicolumn{1}{|c}{\textbf{Nome classe}} & \multicolumn{1}{|p{7cm}}{\textbf{Descrizione}}   & \multicolumn{1}{|c|}{\textbf{Requisiti}}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\footnotesize\itshape\tablename~\thetable: continua nella prossima pagina} \\
+\endfoot
+\bottomrule
+\multicolumn{2}{r}{\footnotesize\itshape\tablename~\thetable: si conclude dalla pagina precedente} \\
+\endlastfoot
+
+
+
+\midrule
+HmmGui
+& Interpreta il Model, accetta e notifica i \emph{listener} per l'input utente
+& RFO1
+\\
+\midrule
+HmmTraining
+& Racchiude i metodi necessari per effettuare il training sul database
+& RFO1.1, RFO1.2, RFO1.3, RFO1.3.1, RFO1.3.2
+\\
+\midrule
+HmmTesting
+& Racchiude i metodi necessari per effettuare il testing sulle firme non visionate
+& RFO1.4, RFO1.4.1, RFO1.4.2, RFO1.4.3, RFO1.4.4
+
+\end{longtable}

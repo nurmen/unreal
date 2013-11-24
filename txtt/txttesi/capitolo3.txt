@@ -1,0 +1,35 @@
+Capitolo 3.
+
+3. Attività di stage
+3.1 Pianificazione
+x.x Ricerca di miglioramento del algoritmo attuale (distance-based)
+Futili miglioramenti studiati/trovati/individuati e non applicati.
+x.x Ricerca nuovi approcci
+Selezionato (da un insieme composto di un solo elemento) il HMM-based classifier
+3.2 Analisi dei requisiti (troppo generica?)("nuovo" classificatore)
+
+
+Rfob 1. Classificare in modo (con % più alta/accuracy maggiore (di quanto non è al momento)) corretto una firma statica. (immagine firma autografa)
+Rfob 1.1 Migliorare algoritmo preesistente (se vale la pena)
+Rfob 1.1.1 Comprendere l'algoritmo attuale
+Rfob 1.2 Implementare un altro tipo di classificatore. (sempre statistical-based)
+Rfob 1.2.1 Studiare i diversi approcci alla classificazione delle firme statiche in letteratura
+Rfob 1.2.2 Selezionare un metodo
+
+
+output vorremmo un nuovo classificatore, più accurato?
+3.3 Studio approcci diversi
+3.4 
+
+
+3. Attività di stage
+3.1 Pianificazione
+3.2 Analisi
+3.3 Progettazione
+3.4 Implementazione prototipo
+
+
+
+Dubbi e osservazioni:
+- potrebbero esserci delle sotto-sezioni non ancora individuate
+- la scelta di alcune tecnologie /librerie è stata modificata in corso d'opera poichè le scelte effettuate non rispondevano in modo effettivo/completo/efficace ai bisogni individuati.

@@ -1,0 +1,129 @@
+1. dominio applicativo
+1.1 Azienda
+logo + descrizione generale (copia-incolla dal sito?)
+1.2 Prodotti e clienti
+esempi prodotti e i clienti per cui sono fatti?
+1.3 Tecnologie
+elenco generale delle tecnologie impiegate per fare i prodotti?
+1.4 Processi interni
+1.4.1 sviluppo
+1.4.2 documentazione
+1.4.3 verifica e validazione
+1.4.4 manutenzione
+1.4.5 qualità su tutti i precedenti
+
+Idee:
+- serve un logo
+- descrizione generale
+
+Domanda:
+- come farai a fare paragrafi "seri" con quei nomi
+
+
+1.1 Azienda
+
+L'azienda nasce/costituita ....
+
+Logo aziendale...
+
+
+1.4 pagina 9/17 requisiti utente/analisi [vincoli sul progetto di stage]
+
+
+
+
+
+
+Corvallis, società di Information Technology, vanta oltre 25 anni di esperienza
+
+Corvallis opera da tempo con i principali istituti di credito offrendo specifiche competenze in risparmio gestito, finanza, compliance, governance, crediti, sistemi di pagamento e document management.
+
+tecnologie Business Logic: COBOL II / DB2; Middleware: JAVA / ORACLE; Presentation: 3270 – Web; Monitor TP: CICS / IMS; Posto di Lavoro: 3270 / Intranet WEB.
+
+DB2/ Oracle/ SQL Server
+
+Struttura applicativa a 3 “layer” con precisa suddivisione delle funzioni svolte da ciascun layer: • Presentation Layer, realizzato in accordo con le specifiche della piattaforma J2EE; • Application Layer, realizzato in accordo con le specifiche della piattaforma MVS (COBOL-CICS); • Data Layer, realizzato in accordo con le specifiche della piattaforma MVS (COBOL-DB2); • Architettura “a servizi” in grado di soddisfare quanto richiesto; dal modello di integrazione SOA divenuto ormai standard delle nuove applicazioni bancarie.
+
+
+
+Presentation Layer: Piattaforma J2EE, .NET, 3270 Application Layer: Piattaforma z/OS, Linguaggio Cobol / CICS Data Layer: Piattaforma z/OS, Linguaggio Cobol / DB2
+
+
+Websphere, Weblogic
+
+piattaforma IrionDQ
+
+tecnologia OpenSource (MapServer, PostgreSQL PostGIS)
+
+SQL Server Desktop Engine (anche noto come MSDE 2000)
+
+Oracle Primavera
+
+Oracle,MS SQL Server, DB2, PostgreSQL
+
+piattaforma QlikView
+
+L’acquisizione della firma ed il suo riconoscimento sono funzionalità disponibili in ambiente WEB, Mobile o sul singolo posto di lavoro (client). La gestione del repository di firme (enrollment) è disponibile on-line su Web S.O.: Windows 7,Vista, XP SP2. Server: Apache Tomcat Database: DB2, Oracle, MS SQL Il supporto alla perizia grafologica è disponibile off-line su client Gestione della firma Modalità Client - S.O.: Windows XP, Windows Vista, Windows 2003 und Windows 7 - Supported USB/Serial Tablet or TabletPC Modalità Web - S.O. server: Windows, Linux - Server java JRE a 32 BIT: (Apache Tomcat 6.x, IBM Websphere 6.1 (SDWEB 3.0.x), Jetty) - Client windows: Internet Explorer 7¹/8/9 or Firefox 2.x or newer, Google Chrome - Client Mobile: applicazioni per iOS e Android device
+
+piattaforma Incentage.
+
+
+identificando le soluzioni più eficaci e
+convenienti per
+
+PRODOTTI E CLIENTI (Prodotti e servizi)
+
+BANCHE Corvallis opera da molti anni con i principali istituti di credito e società prodotto. Grazie all’esperienza acquisita, alle competenze interne e all’attenta osservazione dei mutamenti normativi e di mercato, Corvallis è oggi uno dei player di riferimento nel mercato, dove ha sviluppato aree di eccellenza attraverso soluzioni e specifiche competenze in: • Risparmio Gestito • Finanza • Crediti • Compliance • Governance • Sistemi di Pagamento • Document Management ASSICURAZIONI Corvallis è il primo operatore indipendente per l’outsourcing nelle compagnie Assicurative per i processi Vita e Danni (IT e backoffice) e ricopre un ruolo primario nelle soluzioni di Antiriciclaggio e di Contabilità di Agenzia. L’offerta, inoltre, interessa le principali aree organizzative e di business del Cliente: • Sistema Portafoglio Vita e Danni • Sistemi di agenzia • Sistemi sinistri • Compliance • Governance • Servizi di Back Office • Outsourcing • Document Management
+
+ASSICURAZIONI Corvallis è il primo operatore indipendente per l’outsourcing nelle compagnie Assicurative per i processi Vita e Danni (IT e backoffice) e ricopre un ruolo primario nelle soluzioni di Antiriciclaggio e di Contabilità di Agenzia. L’offerta, inoltre, interessa le principali aree organizzative e di business del Cliente: • Sistema Portafoglio Vita e Danni • Sistemi di agenzia • Sistemi sinistri • Compliance • Governance • Servizi di Back Office • Outsourcing • Document Management
+
+INDUSTRIA E SERVIZI I clienti di Corvallis sono le principali industrie e imprese appartenenti a differenti settori: Oil & Gas, Engineering, Construction, Aeropsace & Defense, Telco, Media. Negli anni ha acquisito una particolare competenza nell’ambito del Project & Portfolio Management distinguendosi anche in quanto partner di Oracle per i prodotti della suite Oracle Primavera - leader mondiale nel Project Management – ambito nel quale vanta oltre 300 installazioni in Italia. Le competenze in questo mercato comprendono inoltre soluzioni nell’ambito della Governance, con specializzazioni sia relativamente alla Business Intelligence sia alla Data Quality e l’erogazione di servizi di supporto specialistico relativo a prodotti leader di mercato tra i quali Cognos, Qlikview, Hyperion, Business Object e IrionDQ.
+
+
+AMMINISTRAZIONE Con un consolidato patrimonio di competenze di processo del public sector, Corvallis offre soluzioni e servizi per le pubbliche amministrazioni centrali e locali, a supporto dell’efficientamento dell’ente: • Tributi e fiscalità per gli enti locali, anche attraverso la controllata Gefil, iscritta all’Albo Concessionari (Esattoria) che eroga servizi di liquidazione, l’accertamento e la riscossione dei tributi; • Sistemi informativi territoriali e catastali, GIS, Digital Mapping e cartografia; • Document Management; • Sistemi Informativi per la catalogazione, conservazione e la tutela dei Beni Culturali.
+
+/////////////////////////old reuse///////////////
+
+Application Management. Outsourcing. System integration & Prodotti. Servizi informatizzati
+
+Corvallis propone competenze e soluzioni a supporto dei processi primari presso Istituti Bancari, Finanziari, SIM (Società di intermediazione mobiliare - a differenza delle banche non svolgono intermediazione creditizia), SGR (Società di Gestione del Risparmio) e Centri Servizi.
+
+Corvallis opera da tempo con i principali istituti di credito offrendo specifiche competenze in risparmio gestito, finanza, compliance, governance, crediti, sistemi di pagamento e document management.
+
+Ha consolidato la propria offerta in 4 settori strategici per il mondo finance:
+area compliance, risparmio gestito e crediti; evoluzione tecnologica; document management.
+
+Le principali aree di competenza per le banche sono:
+ 
+Risparmio gestito
+Area Finanza
+Area Crediti
+Sistemi di Pagamento
+Governance
+Compliance
+
+Le principali aree di competenza per le assicurazioni sono:
+ 
+Sistema Portafoglio Vita e Danni
+Sistemi di Agenzia
+Compliance
+Governance
+Servizi di Back Office
+Outsourcing
+
+Per industria e servizi
+
+PROJECT MANAGEMENT E GOVERNANCE
+
+Per la pubblica amministrazione
+document management
+governance
+
+identificando le soluzioni più eficaci e
+convenienti per
+/////////////////////////fine old reuse /////////////////////////////////
+
+
+
+
+Il modello di ciclo di vita adottato è quello incrementale? con tante iterazioni iterne ad ogni incremento dovute soprattutto alle poche conoscenze in ambito statistico, hidden markov model.

@@ -1,0 +1,33 @@
+problema principale espositivo
+
+piano iniziale, settimana 1, settimana 2 OK, dalla settimana 3 
+
+Pianificazione, descrive quasi tutto quello che è successo al piano originale?
+
+Propone una panoramica di tutte le modifiche?
+
+
+Analisi : 
+-output prima settimana
+-scelta di un nuovo classificatore -> è un requisito!!!!?
+- ricerca di migliorie? si è analisi del prodotto preesistente.....
+
+
+
+
+
+MVC? database firme - gui - trainer/tester!
+
+Da masticare!
+
+cicli iterativi, incrementi? non sarebbe male spiegarla sul serio,: incremento 1 : gui funzionante..., incremento 2 : training, incremento 3 : test?
+
+poche cicli iterativi all'interno del primo incremento
+
+parecchi cicli iterativi all'interno del secondo
+
+parecchi cicli iterativi all'interno del terzo
+
+
+il fatto che è un prototipo, una ricerca, ci da il permesso di pasticciare? col piano pianificato? instabilità? abbiamo sottovalutato qualche aspetto?
+

@@ -1,0 +1,29 @@
+- termini glossario (glossario inserito, sembra funzionare: mancano i termini9
+
+DONE- sommario/abstract
+
+- norme/convenzioni tipografiche, leggi file ConvenzioniTipografiche, presta attenzione al problema del diverso dispositivo di lettura (pc o cartaceo)
+
+- bold su qualche parola?
+
+DONE- indice
+
+- capitolo I
+DONE- esempi prodotti con diagrammi semplici architetturali, abbiamo uno tra WINTAR e KYC, parlare dell'architettura SOA, framwork aziendale, java
+- serve un diagramma riassuntivooooooo?
+
+
+- capitolo II, scritto 
+- Ricorderai di usare il corsivo per tutti i termini in lingua diversa dall'italiano.
+- Presenterai brevemente le librerie che elenchi tra i vincoli.
+- mettere una tabella vera! quella è vecchia!!
+
+
+- capitolo III
+- diagrammi di gantt, adoperato gantt project, avrei usato smartsheet ma non esporta bene
+- Nell'introduzione del capitolo III non serve il dettaglio che dai sulla pianificazione settimanale; basterà una singola tabella riassuntiva organizzata per settimane.
+
+- capitolo IV
+
+
+- elementi BIBLIOGRAFICI, inserito , sembra funzionare, devi solo aggiungere nuovi elementi
