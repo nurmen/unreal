@@ -1,0 +1,735 @@
+\documentclass[11pt,xcolor={dvipsnames}]{beamer}
+% Il parametro xcolor serve per poter usare il comando \usecolortheme con molti nuovi colori
+
+\mode<presentation>{
+
+  \usetheme{Warsaw}  
+%  \usetheme{Berkeley}
+%  \usecolortheme{seahorse}
+	\usecolortheme[named=OliveGreen]{structure}
+% Altri colori usabili: OliveGreen, Brown, Sepia, RawSienna, 
+  \useoutertheme{shadow}
+ 	\setbeamercovered{transparent}
+	\setbeamercolor{block title example}{fg=white,bg=Blue}
+	\setbeamercolor{block body example}{fg=black,bg=Blue!10} 
+	\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+	\setbeamercolor{postit2}{fg=yellow,bg=OliveGreen}
+}
+
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+%carattere per migliorare la leggibilità
+%\usepackage{mathpazo}6
+%\usepackage[scaled=.95]{helvet}
+%\usepackage{courier}
+% Font gradevoli utilizzati
+\usepackage[T1]{fontenc}
+%\usepackage{pgf}
+\usepackage{graphics}
+\graphicspath{{presentazione/}}
+
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{amsthm}
+% Per ottimizzare e migliorare la scrittura matematica
+%\numberwithin{equation}{section}
+% Per legare la numerazione delle formule alle rispettive sezioni
+%\usepackage{split}
+% Per spezzare le formule con allineamento
+\usepackage{numprint}
+% Per poter scrivere i numeri con la spaziatura ogni 3 cifre \np{1000} --> 1 000
+\usepackage{mathcomp}
+\usepackage{gensymb}
+% Per poter usare \numprint[\textcelsius]{20} --> 20°C 
+\newcommand{\ud}{\mathop{}\ \mathrm{d}}
+% Poi per scrivere dx ---> \ud x
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+% Per definire il comando valore assoluto, bisogna caricare il pacchetto mathtools
+
+\hypersetup{
+			pdftitle={Aspetti legislativi e progettuali inerenti alla realizzazione degli impianti geotermici},
+			pdfsubject={Università di Padova, Facoltà di Ingegneria},
+			pdfauthor={Nicola Rainiero},
+			pdfkeywords={geotecnica, energia, geotermia, legge, sonde},
+			pdfpagemode=FullScreen, % avvia a pieno schermo
+			%citecolor=black,
+			%filecolor=black,
+			%linkcolor=black,
+			%urlcolor=black
+}
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\newcommand{\MyLogo}{%
+\begin{textblock}{14}(2.0,0.1)
+%  \pgfuseimage{logo}
+ \includegraphics[height=1.15cm, angle=0]{unipd}
+\end{textblock}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Aspetti legislativi e progettuali degli impianti geotermici]{Aspetti legislativi e progettuali inerenti alla realizzazione degli impianti geotermici}
+\author[Nicola Rainiero]
+{Nicola Rainiero}
+\institute[Universit\`a degli Studi di Padova]
+{
+  Universit\`a degli Studi di Padova\\
+  Facolt\`a di Ingegneria -- Corso di laurea in Ingegneria Civile\\
+  Dipartimento IMAGE \\[0.5cm]
+  Relatore\\ Prof. Ing. \textbf{Marco Favaretti}\\[0.25cm]
+  Correlatore\\ Ing. \textbf{Luigi Ferrari}\\
+  }
+\date{21 Aprile 2010}
+
+%\logo{\includegraphics[height=1.5cm, angle=0]{unipd}}
+% Per avere un logo su tutte le pagine, MOLTO BRUTTO!!
+
+%\titlegraphic{\includegraphics[height=1.4cm, angle=0]{unipd}}
+% Per avere un'immagine in prima pagina
+
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Sommario}
+%    \tableofcontents[currentsection,currentsubsection]
+%    \tableofcontents[currentsection]
+%    \tableofcontents
+%  \end{frame}
+%}
+%%%% SOMMARIO CON INDICE AD OGNI QUADRO!!
+
+\begin{document}
+\transduration{1}
+
+%%%% COPERTINA
+\begin{frame}
+\transdissolve
+\MyLogo
+\begin{center}
+% \includegraphics[height=1.5cm, angle=0]{unipd}
+  \titlepage
+\end{center}
+\end{frame}
+
+%%%% SOMMARIO CON INDICE
+\begin{frame}{Sommario}
+\transboxin
+\MyLogo
+%\tableofcontents[pausesections,part=1]
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PRIMA PARTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La geotermia a bassa entalpia}
+
+\subsection{Premesse}
+\begin{frame}{Definizioni}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+\includegraphics[width=.7\textwidth]{modello_geotermico}
+\begin{block}{Impianto geotermico}
+\'E un sistema di climatizzazione che utilizza come fonte termica il terreno, appoggiandosi se necessario ad una pompa di calore
+\end{block}
+\end{center}
+\end{frame}
+
+\begin{frame}{Definizioni}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+\includegraphics[width=.7\textwidth]{modello_geotermico}
+\begin{alertblock}{Geotermia classica}
+Svolge un ruolo secondario nell'equilibrio termico del sottosuolo\\
+\end{alertblock}
+\vspace{0.8cm}
+\end{center}
+\end{frame}
+
+\begin{frame}{Tipologie e suddivisione}
+%\transglitter
+\MyLogo
+\begin{columns}
+\column{.6\textwidth}
+	\includegraphics[width=.99\textwidth]{impianti} 
+%	\includegraphics<2>[width=.99\textwidth]{impianti_carichi} 
+%	\includegraphics<3>[width=.99\textwidth]{impianti_pdc}
+\column{.4\textwidth}
+\begin{block}{Open loop}
+Scambio di calore per convezione forzata (acqua da corpi idrici)
+\end{block}
+\bigskip \bigskip
+\begin{block}{Closed loop}
+Scambio di calore per conduzione (sonde geotermiche)
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Tipologie e suddivisione}
+%\transglitter
+\MyLogo
+\begin{columns}
+\column{.6\textwidth}
+	\includegraphics<1>[width=.99\textwidth]{impianti_sorgenti} 
+	\includegraphics<2>[width=.99\textwidth]{impianti_carichi} 
+	\includegraphics<3>[width=.99\textwidth]{impianti_pdc}
+\column{.4\textwidth}
+	\begin{itemize}
+  		\item<1-> Sorgente: \alert{terreno}
+  		\item<2-> Carico: \alert{fornito dall'edificio}
+		\item<3-> Trasferimento di calore: \alert{PdC, scambiatori}
+  	\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Il calore nel sottosuolo}
+%\transdissolve
+\MyLogo
+\begin{columns}
+\column{.4\textwidth}
+	\begin{itemize}
+  		\item Irraggiamento
+  		\item Flusso della falda
+		\item Conduzione termica nel terreno
+		\item Flusso di calore geotermico
+  	\end{itemize}
+\column{.6\textwidth}
+	\includegraphics [width=.95\textwidth]{regime_termico} 
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{La pompa di calore}
+\framesubtitle{funzionamento in riscaldamento (ciclo a compressione di vapore)}
+%\transdissolve
+\MyLogo
+\begin{columns}
+\column{.25\textwidth}
+\begin{align*}
+ \alert{COP_H} &= \dfrac{\abs{Q_2}}{\abs{L}} \\
+ 	   &= \dfrac{\abs{Q_2}}{\abs{Q_2}-Q_1} \\
+ 	   &= \alert{\dfrac{T_2}{T_2-T_1}} \\
+\end{align*}
+\column{.75\textwidth}
+	\includegraphics[width=.99\textwidth]{pdc_h}
+\end{columns}
+\end{frame}
+
+\begin{frame}{La pompa di calore}
+\framesubtitle{funzionamento in riscaldamento (ciclo a compressione di vapore)}
+%\transdissolve
+\MyLogo
+\begin{columns}
+\column{.25\textwidth}
+\begin{align*}
+ \alert{COP_H} &= \dfrac{\abs{Q_2}}{\abs{L}} \\
+ 	   &= \dfrac{\abs{Q_2}}{\abs{Q_2}-Q_1} \\
+ 	   &= \alert{\dfrac{T_2}{T_2-T_1}} \\
+\end{align*}
+\column{.75\textwidth}
+	\includegraphics[width=.99\textwidth]{pdc_carnot_h}
+\end{columns}
+\end{frame}
+
+\begin{frame}{La pompa di calore}
+\framesubtitle{funzionamento in raffrescamento (ciclo a compressione di vapore)}
+%\transdissolve
+\MyLogo
+\begin{columns}
+\column{.25\textwidth}
+\begin{align*}
+ \alert{COP_C} &= \dfrac{Q_1}{\abs{L}} \\
+ 	   &= \dfrac{Q_1}{\abs{Q_2}-Q_1} \\
+ 	   &= \alert{\dfrac{T_1}{T_2-T_1}} \\
+\end{align*}
+\column{.75\textwidth}
+	\includegraphics[width=.99\textwidth]{pdc_c}
+\end{columns}
+\end{frame}
+
+\begin{frame}{La pompa di calore}
+\framesubtitle{funzionamento in raffrescamento (ciclo a compressione di vapore)}
+%\transdissolve
+\MyLogo
+\begin{columns}
+\column{.25\textwidth}
+\begin{align*}
+ \alert{COP_C} &= \dfrac{Q_1}{\abs{L}} \\
+ 	   &= \dfrac{Q_1}{\abs{Q_2}-Q_1} \\
+ 	   &= \alert{\dfrac{T_1}{T_2-T_1}} \\
+\end{align*}
+\column{.75\textwidth}
+	\includegraphics[width=.99\textwidth]{pdc_carnot_c}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Obiettivi e contenuti}
+\begin{frame}{Obiettivi e contenuti}
+%\transblindshorizontal
+\MyLogo
+\begin{enumerate}
+\item<1-> descrizione e dimensionamento degli impianti geotermici, con particolare attenzione ai due più rappresentativi;
+\item<2-> valutazione degli impatti nel sottosuolo;
+\item<3-> quadro normativo e proposta per un iter autorizzativo in collaborazione con l'ing. Luigi Ferrari, responsabile del settore ambiente presso la Provincia di Rovigo.
+\end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Metodo}
+\begin{frame}{Metodo di lavoro}
+\transdissolve
+\MyLogo
+\begin{itemize}
+\item<1-> ricerca bibliografica: pubblicazioni, manualistica, atti di convegno, incontri con le aziende; 
+\item<2-> analisi e selezione critica del materiale;
+\item<3-> elaborazione dei contenuti in funzione della componentistica legata al sottosuolo.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECONDA PARTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{I sistemi geotermici}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Open loop da falda sotterranea}
+\begin{frame}{Open loop da falda sotterranea}
+\framesubtitle{Componentistica nel terreno}
+\transboxin
+\MyLogo
+\begin{columns}
+\column{.4\textwidth}
+\begin{itemize}
+\item<1-> pozzo/i di presa;
+\item<2-> pozzo/i di scarico.
+\end{itemize}
+\begin{block}<2->{Nel sistema doublette}
+\'E auspicabile far operare i pozzi nello stesso corpo idrico sotterraneo
+\end{block}
+\column{.6\textwidth}
+	\includegraphics<1-2>[width=.99\textwidth]{impianto_gw}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Considerazioni preliminari}
+%\transdissolve
+\MyLogo
+%\begin{columns}
+%\column{.5\textwidth}
+%\begin{center}
+\begin{itemize}
+\item<1-> Valutazione delle proprietà idrogeologiche dell'acquifero (per soddisfare i carichi termici)
+%\setbeamercolor{postit2}{fg=yellow,bg=OliveGreen}
+\begin{beamercolorbox}[center, shadow=false, rounded=true]{postit2}
+In genere la portata è compresa tra $\numprint[]{0.027} \div \numprint[]{0.054} \dfrac{\ell}{s}$ per $\mathrm{kW_t}$ \\[2.5mm]
+\begin{footnotesize}per una abitazione con un picco di $P_t=\numprint[kW_t]{5}$: $Z \approx \numprint[\dfrac{\ell}{s}]{0.2}=\numprint[\dfrac{\ell}{min}]{12}=\numprint[\dfrac{\ell}{h}]{720}=\numprint[\dfrac{m^3}{h}]{0.72}$\end{footnotesize}
+\end{beamercolorbox}
+\item<2-> Valutazione della qualità idrochimica dell'acqua (per la scelta dei materiali e del tipo di scambiatore)
+\item<3-> Valutazione dei regolamenti per lo scarico (dove e come)
+\end{itemize}
+%\includegraphics[width=.75\textwidth]{modello_acquifero} \\
+%%% ESEMPIO DEF POSTIT
+%\setbeamercolor{postit}{fg=yellow,bg=OliveGreen}
+%\begin{beamercolorbox}[sep=0.1cm, wd=.5\textwidth, center, shadow=false, rounded=true]{postit}
+%mfmdfmdfmd
+%\end{beamercolorbox} 
+%%% FINE ESEMPIO DEF POSTIT
+%\end{center}
+%\column{.5\textwidth}
+%\end{columns}
+\end{frame}
+
+\begin{frame}{In fase di progettazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+%\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Stabilire la relazione funzionale tra portata e abbassamento del livello statico (comprese le perdite reali)
+\end{beamercolorbox} 
+\includegraphics[height=.7\textheight]{perdite_reali}
+%\vspace{0.8cm}
+\end{center}
+\end{frame}
+
+\begin{frame}{In fase di progettazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+%\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Considerare il fenomeno del ritorno di calore nel pozzo di presa (feedback termico)
+\end{beamercolorbox} 
+\includegraphics[height=.65\textheight]{feedback_doublet_no}
+%\vspace{0.8cm}
+\end{center}
+\end{frame}
+
+\begin{frame}{In fase di progettazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+%\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Considerare gli effetti della migrazione di calore a valle del pozzo di scarico
+\end{beamercolorbox} 
+\includegraphics[height=.65\textheight]{feedback_doublet_ok}
+%\vspace{0.8cm}
+\end{center}
+\end{frame}
+
+\begin{frame}{Dimensionamento}
+%\transblindshorizontal
+\MyLogo
+\begin{block}<1->{Per piccoli impianti o per una stima iniziale}
+\begin{enumerate}
+\item equazioni fornite dall'idrogeologia (Theis, Thiem, Logan) per la stima della portata e dell'abbassamento indotto;
+\item fogli di calcolo specifici che assegnata la portata e le caratteristiche dell'impianto determinano il funzionamento in regime di riscaldamento e di raffreddamento (Rafferty).
+\end{enumerate}
+\end{block}
+\begin{alertblock}<2->{Per grandi impianti ($P_t \geq \numprint[kW_t]{30}$) o campi pozzi}
+Modellazione numerica delle falde, esistono software per lo studio del flusso di falda e del relativo trasporto di calore (HST3D, SHEMAT, FEFLOW).
+\end{alertblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Closed loop da sonde geotermiche verticali}
+\begin{frame}{Closed loop da sonde geotermiche verticali}
+\framesubtitle{Componentistica nel terreno}
+%\transdissolve
+\MyLogo
+\begin{columns}
+\column{.4\textwidth}
+\begin{itemize}
+\item<1-> pozzi trivellati e cementati;
+\end{itemize}
+\begin{block}<2->{La sonda geotermica}
+\'E costituita da una o più coppie di tubi ad ''U'' che vengono calate in un foro trivellato (profondo \numprint[m]{100} o più) e riempito con una miscela opportuna. Al loro interno circolerà un fluido termovettore.
+\end{block}
+\column{.6\textwidth}
+%	\includegraphics<1-2>[width=.99\textwidth]{impianto_sgv}
+	\includegraphics<1-2>[width=1.1\textwidth]{schema_circolazione}	
+\end{columns}
+\end{frame}
+
+\begin{frame}{Considerazioni preliminari}
+%\transdissolve
+\MyLogo
+%\begin{columns}
+%\column{.5\textwidth}
+%\begin{center}
+\begin{itemize}
+\item<1-> Valutazione delle proprietà del terreno (conducibilità termica, calore specifico, temperatura del suolo)
+%\setbeamercolor{postit}{fg=yellow,bg=OliveGreen}
+\begin{beamercolorbox}[center, shadow=false, rounded=true]{postit2}
+Il picco di rendimento termico per una sonda di \numprint[m]{100} è compreso tra $\numprint[]{4} \div \numprint[kW_t]{7}$
+\end{beamercolorbox}
+\item<2-> Valutazione approfondita dei carichi termici dell'edificio (durata, carichi di punta, numero equivalente di ore)
+\item<3-> Valutazione della temperatura di funzionamento lato terreno e sue implicazioni sulle strutture limitrofe
+\end{itemize}
+%\includegraphics[width=.75\textwidth]{modello_acquifero} \\
+%%% ESEMPIO DEF POSTIT
+%\setbeamercolor{postit}{fg=yellow,bg=OliveGreen}
+%\begin{beamercolorbox}[sep=0.1cm, wd=.5\textwidth, center, shadow=false, rounded=true]{postit}
+%mfmdfmdfmd
+%\end{beamercolorbox} 
+%%% FINE ESEMPIO DEF POSTIT
+%\end{center}
+%\column{.5\textwidth}
+%\end{columns}
+\end{frame}
+
+\begin{frame}{In fase di progettazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+%\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Valutare con cura il riempimento del foro\\ (per assicurare una buona impermeabilità e conducibilità)
+\end{beamercolorbox} 
+\includegraphics[height=.6\textheight]{variabilita_resb} \\[0.1mm]
+\begin{scriptsize}Campo di variabilità del foro al variare del tipo di riempimento\end{scriptsize}
+\end{center}
+\end{frame}
+
+\begin{frame}{In fase di progettazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+%\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Stabilire lo scambio termico sul breve, medio e lungo periodo (è un fenomeno transitorio)
+\end{beamercolorbox}
+\vspace{0.1cm}
+\includegraphics[height=.65\textheight]{sviluppo_temp}
+%\vspace{0.8cm}
+\end{center}
+\end{frame}
+
+\begin{frame}{In fase di progettazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+%\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Considerare l'interferenza termica tra i pozzi
+\end{beamercolorbox}
+\pause
+\vspace{1.0cm}
+%\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+%Valutare con cura la miscela cementizia che costituirà il riempimento del foro (per assicurare adeguata impermeabilità e conducibilità termica)
+%\end{beamercolorbox}
+%\pause
+\vspace{1.0cm}
+\begin{beamercolorbox}[sep=0.1cm, center, shadow=true, rounded=true]{postit}
+Concordare preventivamente le prove di collaudo tra le varie aziende interessate alla realizzazione dell'impianto
+\end{beamercolorbox}
+\end{center}
+\end{frame}
+
+\begin{frame}{Dimensionamento}
+%\transblindshorizontal
+\MyLogo
+\begin{block}<1->{Per piccoli impianti o per una stima iniziale}
+\begin{enumerate}
+\item valori tabellari di resa termica;
+\item nomogrammi per il calcolo delle lunghezze della sonda (norme VDI).
+\end{enumerate}
+\end{block}
+\begin{alertblock}<2->{Per grandi impianti ($P_t \geq \numprint[kW_t]{30}$) o campi sonde}
+\begin{enumerate}
+\item test di resa termica;
+\item calcoli analitici (soluzioni di Claesson e Eskilson) o software numerici (EED, GLHEPro, TRNSYS). 
+\end{enumerate}
+\end{alertblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Valutazioni geotecniche ed ambientali}
+\begin{frame}{Valutazioni geotecniche}
+%\framesubtitle{Stati limite per un sistema geotermico}
+%\transblindshorizontal
+\MyLogo
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit}
+Attualmente viene richiesto un modesto contributo specialistico e solo per impianti complessi. Ci si limita alla determinazione di alcuni parametri chiave come:
+\end{beamercolorbox}\pause
+\begin{itemize}
+\item temperatura del suolo iniziale; \pause
+\item conducibilità termica; \pause
+\item calore specifico.
+\end{itemize}
+\pause
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit2}
+I metodi di progettazione analizzati evidenziano che c'è una:
+\end{beamercolorbox}\pause
+\begin{itemize}
+\item sottovalutazione delle proprietà termiche del terreno; \pause
+\item mancanza di fattori di sicurezza (globali e parziali); \pause
+\item eccessiva semplificazione nei dati di input (carichi termici associati all'edificio).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Valutazioni geotecniche}
+%\framesubtitle{Stati limite per un sistema geotermico}
+%\transblindshorizontal
+\MyLogo
+\begin{block}<1->{Stati limite per un sistema geotermico}
+Non si raggiungono stati limite ultimi ma solo di servizio, dovuti principalmente alle infrastrutture, alle connessioni, ai carichi (durata ed entità) e alle caratteristiche del terreno.
+\end{block}
+Si suddividono in:
+\begin{itemize}
+\item<2-> fallimenti a breve termine (entro un ciclo di climatizzazione annuale);
+\item<3-> fallimenti a lungo termine (nella vita utile dell'edificio);
+\item<4-> mancato rispetto delle norme.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Valutazioni ambientali}
+%\framesubtitle{Stati limite per un sistema geotermico}
+%\transblindshorizontal
+\MyLogo
+\begin{exampleblock}{Impatto idrogeologico}
+\begin{columns}
+   \begin{column}{0.15\textwidth}
+      \begin{scriptsize}\alert{Open loop}\end{scriptsize} 
+   \end{column}
+%   \begin{column}{0.05\textwidth}
+%      $ \Longrightarrow $ 
+%   \end{column}
+   \begin{column}{0.8\textwidth}
+		depauperamento degli acquiferi con effetti negativi verso altri utenti o all'ambiente circostante
+   \end{column}
+\end{columns}
+\vspace{2.5mm} \pause
+\begin{columns}
+   \begin{column}{0.15\textwidth}
+	\begin{scriptsize}\alert{Closed loop}\end{scriptsize}
+   \end{column}
+%   \begin{column}{0.05\textwidth}
+%      $ \Longrightarrow $ 
+%   \end{column}
+   \begin{column}{0.8\textwidth}
+		inquinamento delle falde per cattiva perforazione e per perdita di fluido anticongelante
+   \end{column}
+\end{columns}
+\end{exampleblock}
+\pause %\vspace{0.5cm}
+\begin{alertblock}{Impatto termogeologico}
+Il calore è un inquinante (art. 74 D.Lgs. 152/2006) e può apportare dei cambiamenti alla temperatura del terreno, con conseguente: \pause
+\begin{itemize}
+\item congelamento del terreno (solo closed loop); \pause
+\item riscaldamento del suolo; \pause
+\item interferenza termica tra sistemi limitrofi.
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quadro normativo}
+\begin{frame}{Quadro normativo}
+%\transdissolve
+\MyLogo
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit}
+Non esiste una normativa vera e propria. I riferimenti legislativi che trattano l'argomento indirettamente sono:
+\end{beamercolorbox}\pause
+\begin{itemize}
+\item<2-> DPR 236/88: \begin{footnotesize}Norme tecniche per lo scavo, la perforazione, la manutenzione e la chiusura di pozzi d'acqua\end{footnotesize}
+\item<3-> D.Lgs. 152/2006: \begin{footnotesize}Norme in materia ambientale\end{footnotesize}
+%\item<4-> Legge 99/2009: \begin{footnotesize}Disposizioni sullo sviluppo e l'internazionalizzazione delle imprese, nonché in materia di energia\end{footnotesize}
+%\item<5-> UNI EN 15450 (2008): \begin{footnotesize}Progettazione degli impianti di riscaldamento a pompa di calore\end{footnotesize}
+\item<4-> Legge 464/84: \begin{footnotesize}Norme per agevolare l'acquisizione [\dots] di elementi di conoscenza relativi alla struttura geologica e geofisica del sottosuolo nazionale\end{footnotesize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Quadro normativo}
+\transdissolve
+\MyLogo
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit}
+I riferimenti legislativi che trattano in parte l'argomento sono:
+\end{beamercolorbox} \pause
+\begin{itemize}
+\item UNI EN 15450 (2008): \begin{footnotesize}Progettazione degli impianti di riscaldamento a pompa di calore\end{footnotesize} \pause
+\item Legge 99/2009: \begin{footnotesize}Disposizioni sullo sviluppo e l'internazionalizzazione delle imprese, nonché in materia di energia\end{footnotesize} \pause
+	\begin{enumerate}
+		\item D.Lgs. 22/2010: \begin{footnotesize}Riassetto della normativa in materia di ricerca e coltivazione delle risorse geotermiche\end{footnotesize} \pause
+		\item D.Lgs. ?/?: \begin{footnotesize}Decreto volto a definire le prescrizioni per la posa in opera degli impianti a sonde geotermiche\end{footnotesize} \pause
+	\end{enumerate}
+\end{itemize}
+\begin{block}{Per la Regione Veneto (definizione delle competenze)} 
+\begin{columns}
+   \begin{column}{0.15\textwidth}
+      \begin{scriptsize}\alert{Open loop}\end{scriptsize} 
+   \end{column}
+%   \begin{column}{0.05\textwidth}
+%      $ \Longrightarrow $ 
+%   \end{column}
+   \begin{column}{0.8\textwidth}
+		Dgr n. 405 del 29/12/09: \begin{footnotesize}Disposizioni in merito alla modalità di riconoscimento d'uso delle risorse geotermiche\end{footnotesize}
+   \end{column}
+\end{columns} 
+\vspace{2.5mm} \pause
+\begin{columns}
+   \begin{column}{0.15\textwidth}
+	\begin{scriptsize}\alert{Closed loop}\end{scriptsize}
+   \end{column}
+%   \begin{column}{0.05\textwidth}
+%      $ \Longrightarrow $ 
+%   \end{column}
+   \begin{column}{0.8\textwidth}
+		Piano Tutela Acque, delibera n. 107 del 5/11/09
+   \end{column}
+\end{columns}
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TERZA PARTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusioni}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proposta per un iter autorizzativo}
+\begin{frame}{Proposta per un iter autorizzativo}
+\transboxin
+\MyLogo
+\begin{center}
+\includegraphics[height=0.9\textheight]{iter_autorizzativo}
+\end{center}
+\end{frame}
+
+\begin{frame}{Competenze dell'ente di controllo}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+\includegraphics[width=1.0\textwidth]{iter_autorizzativo1}
+\end{center}
+\pause
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit2}
+\begin{itemize}
+\item pianificazione territoriale geotermica;
+\item disciplinare per un utilizzo congruo della risorsa.
+\end{itemize}
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Competenze del committente}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+\includegraphics[width=1.0\textwidth]{iter_autorizzativo2}
+\end{center}
+\pause
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit2}
+\begin{itemize}
+\item doppia domanda e relazione tecnica da presentare
+\item progettazione specialistica
+\item prove di collaudo
+\item climatizzazione annuale per bilanciare i carichi
+\end{itemize}
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Competenze del committente}
+%\transdissolve
+\MyLogo
+\begin{center}
+\includegraphics[width=1.0\textwidth]{iter_autorizzativo3}
+\end{center}
+\pause
+\begin{beamercolorbox}[shadow=false, rounded=true]{postit2}
+\begin{itemize}
+\item unica domanda e relazione tecnica da presentare
+\item progettazione specialistica
+\item prove di collaudo
+\item climatizzazione annuale per bilanciare i carichi
+\end{itemize}
+\end{beamercolorbox}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Il contributo geotecnico}
+\begin{frame}{Il contributo geotecnico}
+%\transboxin
+\MyLogo
+Può migliorare la valutazione:
+\begin{itemize}
+\item<1-> del bilancio energetico globale per i flussi di calore nel terreno;
+\item<2-> delle proprietà termiche dei suoli e delle procedure di analisi (in sito e in laboratorio);
+\item<3-> dell'impatto climatico di questi sistemi sull'ambiente (a piccola, media e larga scala);
+\item<4-> dell'interazione calore del terreno--flusso sotterraneo (attualmente trascurato);
+\item<5-> dei guasti e del complesso di fattori che disciplinano le prestazioni dei sistemi geotermici.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+%\transblindshorizontal
+\MyLogo
+\vspace{1.0cm}
+\begin{beamercolorbox}[sep=1.0cm, center, shadow=false, rounded=true]{postit2}
+\begin{Huge}Grazie per l'attenzione\end{Huge}
+\end{beamercolorbox}
+\pause
+\end{frame}
+
+\end{document}

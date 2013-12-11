@@ -1,0 +1,74 @@
+- indice
+
+- chiedere se la definizione di processo markoviano va riportata, corredata di esempi o meno, lo stesso vale per i HMM (riguardo agli esempi!)
+
+- evidenziare why HMM
+
+Indice
+L'azienda?......
+1. Classificazione di firme statiche
+1.1 Comprendere l'obiettivo
+1.2 Problemi generali (variazioni intrapersonali, interpersonali + tipi di falsificazione)
+1.3 Performance (far + frr + eventuale eer)
+1.4 Tipi di classificatori
+1.4.0 I processi (training + verification)
+1.5 Distance Based Classifier (prototipo pre-stage)
+
+2. Hidden Markov Models
+2.1 Background Processo markoviano ?(+Esempio?)
+2.2 Hidden Markov Models? (+Esempio?)
+2.3 Inizializzazione?
+2.3.1 Features
+preprocessing images, java, imageJ per tirar fuori numeri?, estrazione feature
+a- axial slant
+b- dct
+2.3.2 training, cross validation ->matrici
+
+
+13-14 consuntivo! con misure quantitative (magari anche solo 1)
+
+
+
+1. Classificazione firme statiche
+1.1 Panoramica
+1.1.1 Obiettivo e difficoltà (1 slide)
+- obiettivo, data un'identità da confermare e una firma, classificarla come autentica o falsa
+- difficoltà , le firme di un utente non sono mai identiche (variazioni intrapersonali dovute allo stato emotivo dei sottoscrittori)
+- qualcosa di buono: differenze interpersonali: Le firme di persone diverse possiedono caratteristiche elementari distinte 
+
+
+1.1.2 Tipi di falsificazione (1 slide)
+1.1.3 Valutazione delle performances (1 slide)
+1.1.4 Tipi di classificatori (1 slide)
+1.1.5 I processi in generale  (1 slide) (indipendentemente dal tipo di classificatore) metti workflow della relazione
+
+
+2.0 Hmm
+2.1 Markov Models (1 slide)
+2.2 HMM (1 slide) why a hmm?The different signatures of a same writer are variable. This variability will be well modelized by a HMM.
+This modelization will allow to consider a non stationary signal (the signature) as a piecewise-stationary signal.
+Input data of speech and handwriting recognition exhibit a chronological or linear structure
+Ergodic model is not necessary
+
+
+2.3 Features extraction (1 slide, imageJ + java?)
+2.4 Training (1 slide)
+
+1.Analisi (4slide:obiettivo, terminologia, workflow, metodi di classificazione)1 ->requisiti
+2.Progettazione (Modello di ciclo di vita!java,imageJ,,HMM- 1slide, HMM con le firme 1 slide, problematiche e soluzioni HMM, problemi alle soluzioni)
+Slide1: Scelte effettuate/imposte
+- java
+- imageJ (elaborazione immagini, preprocessings and feature extraction)
+- eclipse (itegrated development environment)
+
+
+3.Implementazione (ImageJ, Jahmm, JScience, jhmm)
+4.Consuntivo (almeno 1 slide per forza)
+
+
+Slide11 HmmTraining, potresti creare tutto il percorso
+da immagine a immagine segmentata a vettori'osservazione
+
+
+
+

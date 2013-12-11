@@ -1,0 +1,525 @@
+\documentclass[11pt,xcolor={dvipsnames}]{beamer} % presentation output
+% \documentclass[11pt,xcolor={dvipsnames},handout]{beamer} % Beamer printout
+% xcolor allows to use many new colors with \usecolortheme
+
+\mode<presentation>{
+  \usetheme{Warsaw}  
+%  Here is a gallery with other themes:
+%  http://deic.uab.es/~iblanes/beamer_gallery/
+  \usecolortheme[named=OliveGreen]{structure}
+%  Others: OliveGreen, Brown, Sepia, RawSienna, 
+%  \useoutertheme{shadow}
+\defbeamertemplate*{footline}{shadow theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+%%%rende transparente quello che sta per comparire
+% 	\setbeamercovered{transparent}
+	\setbeamercolor{block title example}{fg=white,bg=Blue}
+	\setbeamercolor{block body example}{fg=black,bg=Blue!10}
+	\setbeamercolor{postit}{fg=black,bg=OliveGreen!20}
+	\setbeamercolor{postit2}{fg=yellow,bg=OliveGreen}
+%    \setbeamercolor{NEW_STYLE_NAME}{fg=COLOR_FOREGROUNG,bg=COLOR_BACKGROUNG}
+}
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}} 
+  \newenvironment<>{varblock}[2][1.0\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \begin{actionenv}#3%
+    \def\insertblocktitle{#2}%
+    \par%
+    \usebeamertemplate{block begin}}
+  {\par%
+    \usebeamertemplate{block end}%
+  \end{actionenv}}
+
+%% Setting for Beamer printout
+% reference: http://mathoverflow.net/questions/5893/beamer-printout
+\usepackage{pgfpages}
+\mode<handout>{
+  \usetheme{default}
+  \setbeamercolor{background canvas}{bg=Black!5}
+  \pgfpagesuselayout{4 on 1}[a4paper,portrait,border shrink=2.5mm]
+  % 4 slide in one page
+}
+%% Setting for Beamer printout
+
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\graphicspath{{images/}}
+% all the graphics files will go in the subdirectory images
+\usepackage{numprint}
+% with this one \np{1000} becomes 1 000
+\usepackage{mathcomp}
+\usepackage{gensymb}
+% with this one \numprint[\textcelsius]{20} becomes 20°C 
+\newcommand{\ud}{\mathop{}\ \mathrm{d}}
+% with this one \ud{x} becomes dx 
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+% to define absolute value (mathtools is required)
+
+\hypersetup{
+			pdftitle={Classificazione di firme statiche utilizzando i Hidden Markov Models},
+			pdfsubject={UNIVERSITY, DEPARTMENT},
+			pdfauthor={Alexandru PRIGOREANU},
+			pdfkeywords={firme statiche, Hidden Markov Model, hmm, etc.},
+			pdfpagemode=FullScreen, % once opened it goes in fullscreen modality
+			%citecolor=black,
+			%filecolor=black,
+			%linkcolor=black,
+			%urlcolor=black
+}
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+%%%% A NEW COMMAND TO FIX LOGO POSITION (x,y) in mm
+\newcommand{\MyLogo}{%
+\begin{textblock}{14}(2.0,0.6)
+%  \pgfuseimage{logo}
+ \includegraphics[height=1.15cm, angle=0]{logoUnipd.png}
+\end{textblock}
+}
+%%%% A NEW COMMAND TO FIX LOGO POSITION (x,y) in mm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[HMM-based offline signature verification]{Classificazione firme statiche utilizzando i Hidden Markov Models}
+\author[Prigoreanu 1004887]
+{Alexandru PRIGOREANU}
+\institute[INSTITUTE NAME]
+{
+  {\LARGE Università degli studi di Padova}\\[0.3cm]
+  {\Large Dipartimento di Matematica}\\
+  {\large Corso di laurea in Informatica}\\[0.3cm]
+  Relatore\\[0.25cm] Prof. {\large Tullio VARDANEGA}\\[0.25cm]
+  }
+\date{Dicembre 13, 2013}
+
+%\logo{\includegraphics[height=1.5cm, angle=0]{logo}}
+% To have a logo on each page... BAD RESULT!!
+
+%\titlegraphic{\includegraphics[height=1.4cm, angle=0]{logo}}
+% To have an imagie on title page
+
+%%%% TO HAVE A TOC ON EVERY SLIDE
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Sommario}
+%    \tableofcontents[currentsection,currentsubsection]
+%    \tableofcontents[currentsection]
+%    \tableofcontents
+%  \end{frame}
+%}
+%%%% TO HAVE A TOC ON EVERY SLIDE
+
+\begin{document}
+%\transduration{1}
+%%%%%%%%per queste prime 2 slide, nessun numero slide%%%%%%%%%%%%%%%%%%%
+\bgroup
+\makeatletter
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hfill%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    TITLE    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+%\transdissolve
+\MyLogo
+\begin{center}
+% \includegraphics[height=1.5cm, angle=0]{unipd}
+  \titlepage
+\end{center}
+\end{frame}
+
+%%%% TOC
+\begin{frame}{Contenuti}
+%\transboxin
+\MyLogo
+%\tableofcontents[pausesections,part=1]
+  \tableofcontents
+\end{frame}
+\egroup
+\setcounter{framenumber}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIRST SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analisi}
+
+\subsection{Classificazione di firme statiche}
+\begin{frame}{Classificazione di firme statiche}
+\framesubtitle{Obiettivo e difficoltà}
+%\transboxin
+%\transblindshorizontal
+% type of transition effect
+\MyLogo
+\begin{center}
+\begin{itemize}
+  		\item<1-> Obiettivo: Decidere se una firma è autentica/falsa
+  		\item<2-> Variazioni intrapersonali: Le firme personali possiedono grande variabilità, dovuta allo stato emotivo dei sottoscrittori, alla posizione di raccolta, ecc...
+		\item<3-> Differenze interpersonali: Le firme di persone diverse possiedono caratteristiche elementari distinte
+  	\end{itemize}
+
+	\includegraphics<1>[width=0.5\textwidth , height=50pt]{obiettivo.png}
+	\includegraphics<2>[width=1.0\textwidth , height=50pt]{intraPers2.png}
+	\includegraphics<3>[width=1.0\textwidth , height=50pt]{interPers.png}
+
+\end{center}
+\end{frame}
+\begin{frame}{Terminologia}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+\uncover<1-7>{\begin{block}{Tipi di falsificazione}
+	\begin{itemize}
+  		\item<2-> Falsificazioni Casuali
+		\item<3-> Falsificazioni Semplici
+		\item<4-> Falsificazioni Accurate
+	\end{itemize}
+\end{block}}
+\uncover<1-7>{\begin{columns}
+	\column{.25\textwidth}
+		\includegraphics<1->[width=0.9\textwidth , height=40pt]{genuine.png}
+	\column{.25\textwidth}
+		\includegraphics<2->[width=0.9\textwidth , height=40pt]{rf.png}
+	\column{.25\textwidth}
+		\includegraphics<3->[width=0.9\textwidth , height=40pt]{simplef.png}
+	\column{.25\textwidth}
+		\includegraphics<4->[width=0.9\textwidth , height=40pt]{skilledf.png}
+\end{columns}}
+\uncover<5-7>{\begin{block}{Valutazione della performance}
+\begin{itemize}
+	\item<6-> \emph{False Acceptance Rate} (\emph{FAR})
+	\item<7-> \emph{False Rejection Rate} (\emph{FRR})
+\end{itemize}
+\end{block}}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Processi generali}
+\begin{frame}{Processi generali}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+	\includegraphics<1->[width=0.7\textwidth , height=90pt]{generalProcess.png}
+\uncover<1->{\begin{columns}
+\column{0.5\textwidth}
+\uncover<2->{\begin{block}{Preprocessings}
+\begin{itemize}
+\item \emph{Cropping}
+\item \emph{Resizing}
+\item \emph{Binarization}
+\item \emph{Thinning}
+\end{itemize}
+\end{block}}
+\column{0.5\textwidth}
+\uncover<3->{\begin{block}{Features}
+\begin{itemize}
+\item \emph{Calibre}
+\item \emph{Spacing}
+\item \emph{Distribution of pixels}
+\item \emph{Slant}
+\end{itemize}
+\end{block}}
+\end{columns}}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Metodi di classificazione}
+\begin{frame}{Metodi di classificazione}
+%\transblindshorizontal
+\MyLogo
+\begin{center}
+	\includegraphics<1>[width=0.9\textwidth]{classificatori.png}
+	\includegraphics<2>[width=0.9\textwidth]{classificatori1.png}
+	\includegraphics<3>[width=0.9\textwidth]{classificatori2.png}
+\end{center}
+\end{frame}
+
+
+
+\subsection{Casi d'uso}
+\begin{frame}{Casi d'uso}
+%\transdissolve
+\MyLogo
+\begin{center}
+\vspace{-15pt}\includegraphics<1->[width=0.8\textwidth]{uc1.png}
+\end{center}
+\vspace{-15pt}\uncover<2->{\begin{exampleblock}{Requisito di qualità}
+\begin{itemize}
+\item Garantire un'\emph{accuracy} media del 80\%
+\end{itemize}
+\end{exampleblock}}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECOND SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Progettazione}
+\subsection{Scelte effettuate}
+\begin{frame}{Scelte effettuate}
+%\transboxin
+\MyLogo
+\begin{center}
+\vspace{-20pt}
+\begin{columns}
+\column{0.5\textwidth}
+\uncover<1->{\begin{block}{Modello di ciclo di vita}
+		\begin{itemize}
+			\item\emph{Modello incrementale}
+		\end{itemize}
+	\end{block}}
+	\vspace{5pt}
+\uncover<3->{\begin{block}{Librerie Java}
+		\begin{itemize}
+			\item \emph{ImageJ}
+			\item \emph{Jahmm}
+			\item \emph{JScience}
+			\item \emph{jhmm}
+		\end{itemize}
+	\end{block}}
+\column{0.5\textwidth}
+\uncover<2->{\begin{block}{Strumenti}
+		\begin{itemize}
+			\item \emph{Java}
+			\item \emph{Eclipse}
+			\item \emph{Hidden Markov Models}
+		\end{itemize}
+	\end{block}}
+		\vspace{5pt}
+\uncover<4->{\begin{block}{Design Pattern}
+		\begin{itemize}
+			\item \emph{Model View Controller}
+			\item \emph{Composite}
+		\end{itemize}
+	\end{block}}
+\end{columns}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hidden Markov Models}
+\begin{frame}{Hidden Markov Models}
+\framesubtitle{Definizione}
+%\transdissolve
+\MyLogo
+\begin{center}
+\vspace{-10pt}
+\begin{block}{${\lambda}=(A,B,{\pi})$}
+\begin{itemize}
+\item<2-> un insieme S = \{S\ped{1},S\ped{2},...,S\ped{N}\} di stati nascosti
+\item<3-> una matrice A = \{a\ped{ij}\}\ :\ a\ped{ij} = P(q\ped{t+1} = S\ped{j}\ |\ q\ped{t} = S\ped{i})
+\item<4-> una matrice ${\Pi}$ = \{${\pi}$\ped{i}\}: ${\pi}$\ped{i} = P(q\ped{1} = S\ped{i})\ %con\ 1${\le}$ i${\le}$ N,\  ${\pi}$\ped{i}${\ge}$ 0\  e\  ${\sum\limits_{i=1}^N \pi}$\ped{i} = 1
+\item<5-> un insieme V = \{V\ped{1},V\ped{2},...,V\ped{M}\} di simboli di osservazione
+\item<6-> al t-esimo istante il processo emette uno fra i simboli a disposizione: o\ped{t} ${\in}$\ \{V\ped{1},V\ped{2},...,V\ped{M}\}
+\item<7-> una matrice B = \{b\ped{j}(k)\}\ : b\ped{j}(k) = P(o\ped{t} = k\ |\ q\ped{t} = j)
+\item<8-> vale la \emph{proprietà di Markov}:\\
+\hspace{-15pt}P(q\ped{t+1} = S\ped{j}\ |\ q\ped{t} = S\ped{i},\ q\ped{t-1} = S\ped{k},\ ...,\ q\ped{1} = S\ped{1})\ =\ P(q\ped{t+1} = S\ped{j}\ |\ q\ped{t} = S\ped{i})
+\end{itemize}
+\end{block}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Utilizzo dei HMM}
+%\transdissolve
+\MyLogo
+\begin{center}
+\vspace{-10pt}
+\begin{block}{Tre problemi (in genere intrattabili)}
+\begin{enumerate}
+\item<1-> \emph{Evaluation problem}
+\item<2-> \emph{Decoding problem}
+\item<3-> \emph{Learning problem}
+\end{enumerate}
+\end{block}
+\uncover<4->{\begin{exampleblock}{Tre soluzioni (utilizzando la Programmazione Dinamica)}
+\begin{enumerate}
+\item<4-> \emph{Forward algorithm}
+\item<5-> \emph{Viterbi's algorithm}
+\item<6-> \emph{Baum-Welch algorithm}
+\end{enumerate}
+\end{exampleblock}}
+\end{center}
+\end{frame}
+
+\begin{frame}{Vettori di osservazione}
+%\transdissolve
+\MyLogo
+%\begin{center}
+\vspace{-10pt}
+	\begin{columns}
+		\hspace{10pt}\column{0.35\textwidth}
+			\uncover<1->{\begin{block}{Preprocessings}
+				\begin{itemize}
+					\item Cropping
+					\item Binarization
+					\item Skeletonization
+					\item Segmentation
+				\end{itemize}
+			\end{block}}
+			\uncover<4->{\begin{block}{Features}
+				\begin{itemize}
+					\item Slant
+					\item DCT
+				\end{itemize}
+			\end{block}}
+		\column{0.9\textwidth}
+			\hspace{10pt}\includegraphics<2>[width=0.8\textwidth]{matriceB1.png}
+						\includegraphics<3,4>[width=0.8\textwidth]{matriceB2.png}
+						\includegraphics<5->[width=0.8\textwidth]{matriceB.png}
+	\end{columns}
+%\end{center}
+\end{frame}
+
+\begin{frame}{Inizializzazione HMM}
+%\transdissolve
+\MyLogo
+\begin{center}
+	\includegraphics<1>[width=0.9\textwidth]{training.png}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% THIRD SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implementazione}
+%\subsection{sasasd}
+\begin{frame}
+%\transboxin
+\MyLogo
+\begin{center}
+\small{
+		\hspace{-20pt}\begin{table}[width=0.5\textwidth]
+				\hspace{-20pt}\begin{tabular}[width=0.5\textwidth]{l|cccc}
+		\hspace{-20pt}Metrica Software & HmmGui & HmmTraining & HmmTesting \\ \hline
+		\hspace{-20pt}Complessità ciclomatica & 2.50 & 5.50 & 2.33 \pause\\
+		\hspace{-20pt}Media parametri per metodo & 0.77 & 0.60 & 0.65 \pause\\
+		\hspace{-20pt}Linee di codice (\emph{LOC}) per metodo & 13.69 & 26.83 & 12.43 \pause\\
+		\hspace{-20pt}Linee di commento per \emph{LOC} & 15.60 & 29.40 & 17.50
+		\end{tabular}
+\end{table}}
+\begin{block}{Verifica e Validazione}
+\begin{itemize}
+\item Analisi
+\item Progettazione
+\item Implementazione
+\item Documentazione
+\end{itemize}
+\end{block}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% FOURTH SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Consuntivo}
+\subsection{Risultati}
+\begin{frame}
+%\transboxin
+\MyLogo
+\begin{center}
+\begin{columns}
+\column{0.5\textwidth}
+	\hspace{10pt}\includegraphics<1->[width=0.75\textwidth]{bestHMM.png}
+\column{0.5\textwidth}
+\vspace{-10pt}\uncover<2->{\begin{alertblock}{Cause}
+\begin{itemize}
+\item Scelte progettuali
+\item Overfitting
+\item Tempo
+\end{itemize}
+\end{alertblock}}
+\uncover<3->{\begin{exampleblock}{Possibili sviluppi}
+\begin{itemize}
+\item Features
+\item Continuous HMM
+\item HMM scoring
+\item Pseudocounts
+\item Regularization
+\item Weighting
+\item Genetic Algorithms
+\end{itemize}
+\end{exampleblock}}
+\end{columns}
+\end{center}
+\end{frame}
+
+\subsection{Consuntivo}
+\begin{frame}
+%\transboxin
+\MyLogo
+\includegraphics<1->[width=0.7\textwidth]{consuntivo3.png}
+\begin{block}{Altre informazioni quantitative}
+\begin{itemize}
+\item
+\end{itemize}
+\end{block}
+\end{frame}
+
+%%%%%%%%per quest'ultima slide  nessun numero slide%%%%%%%%%%%%%%%%%%%
+\bgroup
+\makeatletter
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hfill%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\setcounter{framenumber}{12}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LAST FRAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Ringraziamenti}
+\transduration{3}%seconds
+\section*{}
+\MyLogo
+\vspace{-10pt}
+\begin{changemargin}{-0.5cm}{-0.5cm}
+\'{E} stato un privilegio poter trascorrere questi anni nelle aule e nei laboratori del \emph{Dipartimento di Matematica} dell'\emph{Università di Padova} a studiare materie che mi appassionano. Ora che sono giunto quasi alla fine di questo percorso di laurea triennale in \emph{Informatica}, voglio ringraziare le persone il cui contributo non deve essere dimenticato.
+\vfill
+%\begin{itemize}
+\begin{columns}
+\column{1.1\textwidth}
+\begin{varblock}{}
+\only<1-2> {Innanzitutto ringrazio il professor \emph{Vardanega} per avermi seguito durante lo \emph{stage} e per avermi fornito utili consigli per la stesura della relazione.}
+\only<3> {In secondo luogo ringrazio i professori del \emph{Corso di Laurea in Informatica} dai quali ho avuto l'opportunità di ampliare le mie (modeste) conoscenze. Ringrazio i seguenti professori e professoresse (in ordine di apparizione): \emph{Alessandro Sperduti, Federico Menegazzo, Gilberto Filè, Antonio Grioli, C.E. Palazzi, Carla De Francesco, Lorenzo Finesso, Francesca Rossi, Livio Colussi, Massimo Marchiori, Francesco Tapparo, Paolo Baldan, Silvia Crafa, Luigi De Giovanni, Ombretta Gaggi}.}
+\only<4> {Ringrazio l'azienda \emph{Corvallis} e in particolare il \emph{tutor} interno \emph{Alberto Pietrogrande} per l'esperienza di stage vissuta.}
+\only<5> {Ringrazio i compagni di corso (ormai amici), coi quali ho svolto alcuni dei progetti didattici, per avermi accettato e sopportato pazientemente (soprattutto quando ero in errore). In particolare ringrazio il gruppo \emph{SevenTech}, formatosi per il progetto di \emph{Ingegneria del Software}, composto da Alessio, Enrico Bo., Enrico Br., Giulio, Nicola, Pietro. Ringrazio il gruppo \emph{IMangiaLibri}, formatosi per il progetto di \emph{Tecnologie Web}, composto da Alberto e Dario. Ringrazio il gruppo \emph{GeoNav}, formatosi per il progetto di \emph{Gestione di Imprese Informatiche}, composto da Fabio e Fabrizio.}
+\only<6> {Come ultimo ma non meno importante, ringrazio la mia famiglia per aver reso possibile il proseguimento dei miei studi.}
+\end{varblock}
+\end{columns}
+\end{changemargin}
+%\end{itemize}
+\vfill
+%\pause
+\end{frame}
+\egroup
+\end{document}

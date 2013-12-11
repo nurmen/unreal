@@ -1,0 +1,58 @@
+\beamer@endinputifotherversion {3.26pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Analisi}{3}{Analisi}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Classificazione di firme statiche}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {1}{1}{1}{3/5}{Classificazione di firme statiche}{0}}
+\headcommand {\beamer@framepages {3}{5}}
+\headcommand {\slideentry {1}{1}{2}{6/12}{Classificazione di firme statiche}{0}}
+\headcommand {\beamer@framepages {6}{12}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{13}{Processi generali}}\headcommand {\beamer@subsectionpages {3}{12}}
+\headcommand {\slideentry {1}{2}{1}{13/15}{Processi generali}{0}}
+\headcommand {\beamer@framepages {13}{15}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{16}{Metodi di classificazione}}\headcommand {\beamer@subsectionpages {13}{15}}
+\headcommand {\slideentry {1}{3}{1}{16/18}{Metodi di classificazione}{0}}
+\headcommand {\beamer@framepages {16}{18}}
+\headcommand {\beamer@subsectionentry {0}{1}{4}{19}{Casi d'uso}}\headcommand {\beamer@subsectionpages {16}{18}}
+\headcommand {\slideentry {1}{4}{1}{19/20}{Casi d'uso}{0}}
+\headcommand {\beamer@framepages {19}{20}}
+\headcommand {\sectionentry {2}{Progettazione}{21}{Progettazione}{0}}
+\headcommand {\beamer@sectionpages {3}{20}}
+\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{21}{Scelte effettuate}}\headcommand {\beamer@subsectionpages {21}{20}}
+\headcommand {\slideentry {2}{1}{1}{21/24}{Scelte effettuate}{0}}
+\headcommand {\beamer@framepages {21}{24}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{25}{Hidden Markov Models}}\headcommand {\beamer@subsectionpages {21}{24}}
+\headcommand {\slideentry {2}{2}{1}{25/32}{Hidden Markov Models}{0}}
+\headcommand {\beamer@framepages {25}{32}}
+\headcommand {\slideentry {2}{2}{2}{33/38}{Hidden Markov Models}{0}}
+\headcommand {\beamer@framepages {33}{38}}
+\headcommand {\slideentry {2}{2}{3}{39/43}{Hidden Markov Models}{0}}
+\headcommand {\beamer@framepages {39}{43}}
+\headcommand {\slideentry {2}{2}{4}{44/44}{Hidden Markov Models}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\sectionentry {3}{Implementazione}{45}{Implementazione}{0}}
+\headcommand {\beamer@sectionpages {21}{44}}
+\headcommand {\beamer@subsectionpages {25}{44}}
+\headcommand {\slideentry {3}{0}{5}{45/48}{}{0}}
+\headcommand {\beamer@framepages {45}{48}}
+\headcommand {\sectionentry {4}{Consuntivo}{49}{Consuntivo}{0}}
+\headcommand {\beamer@sectionpages {45}{48}}
+\headcommand {\beamer@subsectionpages {45}{48}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{49}{Risultati}}\headcommand {\beamer@subsectionpages {49}{48}}
+\headcommand {\slideentry {4}{1}{1}{49/51}{Risultati}{0}}
+\headcommand {\beamer@framepages {49}{51}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{52}{Consuntivo}}\headcommand {\beamer@subsectionpages {49}{51}}
+\headcommand {\slideentry {4}{2}{1}{52/52}{Consuntivo}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {10}{0}{2}{53/58}{Consuntivo}{0}}
+\headcommand {\beamer@framepages {53}{58}}
+\headcommand {\beamer@partpages {1}{58}}
+\headcommand {\beamer@subsectionpages {52}{58}}
+\headcommand {\beamer@sectionpages {49}{58}}
+\headcommand {\beamer@documentpages {58}}
+\headcommand {\def \inserttotalframenumber {13}}

@@ -1,0 +1,198 @@
+Speech:
+Slide 0.
+
+Buongiorno,
+
+Sono lo studente Alexandru Prigoreanu, matricola 1004887. Sono qui per presentare il progetto di stage svolto nel periodo che va dal 2 Settembre al 31 Ottobre.
+
+Il progetto "principalmente" prevedeva l'implementazione di un nuovo classificatore di firme statiche (immagine autografa di una firma).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide Contenuti.
+Inizialmente farò una beve panoramica sulla classificazione delle firme statiche e riporterò i requisiti di massima che il progetto di stage prevedeva.
+
+Nella seconda parte esporrò le scelte progettuali effettuate, sia per quanto riguarda la progettazione archittetturale, sia per quanto riguarda quella di dettaglio. Effettuerò una stringata descrizione dei Hidden Markov Model e del loro impiego nel core del prototipo.
+
+Nella terza parte riporterò i problemi emersi durante la codifica, e elencherò le attività di verifica e validazione effettuate durante il ciclo di vita del software.
+
+Nell'ultima parte di questa presentazione vedremo i risultati ottenuti, le cause/motivi alla base dei risultati, dei possibili sviluppi per migliorare l'accuracy del sistema. Alla fine di questa parte vedremo le ore per attività utilizzate.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 1: Analisi : Classificazione di firme statiche
+
+Nell'ambito delle nuove normative alle banche sarà concesso lo scambio di assegni bancari. 
+
+Accertare in maniera chiara ed univoca il sottoscrittore di un documento avente forza legale (in questo caso assegni bancari) è di fondamentale importanza.(non ripudio e autenticità)
+Nasce quindi l'esigenza di distinguere tra firme false e firme autentiche.
+
+Una delle difficoltà alla base dei classificatori di firme, sta nel fatto che le firme presentano variazioni intrapersonali anche tra le firme di uno stesso sottoscrittore: prese 2 firme di uno stesso sottoscrittore, queste non sono identiche.
+
+Vanno individuate le differenze interpersonali: le firme di due persone diverse sono distinte.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 2: Terminologia
+Vediamo ora dei termini legati alla classificazione di firme.
+
+Esistono 3 tipi di falsificazioni(a seconda del grado di conoscenza del falsificatore). Falsificazioni casuali (random forgeries) prodotte senza conoscere ne il nome del firmatario ne la forma della sua firma.
+Falsificazioni semplici (simple forgeries), prodotte conoscendo il nome del firmatario ma senza avere un esempio della sua firma. Falsificazioni accurate (skilled forgeries), prodotte dopo un allenamento con l'obiettivo di imitare la firma originale nel miglior modo possibile.
+
+Per valutare la performance di un classificatore di firme, vengono utilizzati 2 indici.
+False Acceptance Rate(FAR), indice di accettazione dei falsi, ossia la percentuale di firme false classificate come genuine.
+False Rejection Rate(FRR), indice di rifiut odei genuini, ossia la percentuale di firme genuine classificate come false.
+
+Purtroppo i 2 indici sono inversamente proporzionali, a una riduzione di uno, corrisponde un'aumento dell'altro.
+Quando i due indici sono identici, siamo in presenza di un terzo indice, Equal Error Rate, in generale più è basso L'EER più il sistema è accurato.
+(Un'altro modo di valutare la performance di un sistema è fare la media dei due indici , far e frr, in questa caso saremmo in presenza del indice Average Error Rate).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 3: Processi generali
+
+Vediamo ora i processi generali di training e testing.
+Acquisizione dati: cattura delle immagini firma. Queste possono essere scanerizzate o esportate da documenti pdf.
+
+Lo scopo della fase di preprocessing è quello di
+standardizzare le firme e renderle pronte per la fase di feature extraction.
+Preprocessing, sono operazioni che si effettuano per semplificare le operazioni di feature extraction successive minimizzando la perdità di informazioni. Tra queste le più comuni sono: Cropping, ossia ritagliare l'immagine firma al rettangolo che la contiene; Resizing, ossia ridimensionare l'immagine firma; Binarization, ossia convertirne i colori prima in una scala di grigi ed infine in bianco e nero; Thinning, ossia l'assottigliamento del tratto.
+
+Features Extraction, riduzione dei dati in input, misurando solo determinate caratteristiche (features) o proprietà.
+Il successo di un sistema di verifica della firma dipende fortemente dalla fase di Estrazione delle
+features. Un metodo ideale di feature extraction prevede l'estrazione di quelle caratteristiche che
+minimizzano le variazioni intrapersonali presenti nelle firme di un sottoscrittore e massimizzano le
+variazioni interpersonali presenti nelle firme di due sottoscrittori distinti[2].
+
+ Tra queste ricordiamo : Features statiche come calibre e spacing; calibre individua il rapporto tra altezza e larghezza delal firma; Spacing individua il numero di blocchi di cui si compone la firma, se non vi sono spaziature, questo valore è 1. E Features pseudo-dinamiche (di difficile imitazione) come Distribution of Pixel e Slant. Distribution of pixel : descrive il numero di pixel neri presenti in uno spazio (somma pixel neri diviso altezza del blocco considerato, somma pixel neri diviso larghezza blocco considerato) Slant, individua l'inclinazione più difussa nel blocco considerato. (SPIEGA BENE COME!)
+
+Durante la fase di training, vengono prese in considerazione n firme e in base al feature extraction su queste, viene creata una base di conoscenza contenente dei feature template. In fase di verifica, le feature estratte dalla firma sotto test vengono confrontate con le template feature. 
+
+Esistono vari metodi di classificazione/calcolo template feature. Vediamo ora una panoramica dei metodi più utilizzati.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 4: Metodi di classificazione
+Poichè tratterò solo metod[i] di tipo statistical based, ne spiego il concetto di base.
+
+Nei classificatori di tipo Statistical-based la conoscenza statistica viene utilizzata per usufruire di nozioni come la relazione, la deviazione, tra due o più item per trovare qualche specifica correlazione tra essi. Nei sistemi di verifica della firma, la firma media (template/pattern) viene elaborata a partire da firme collezionate precedentemente (nella fase di training). Questa viene salvata nella base di conoscenza e quando si ha in input una firma da classificare viene utilizzato il concetto di correlazione per calcolare la distanza tra la firma da verificare e la firma media per poi decidere se
+accettarla o rifiutarla.
+
+L'azienda Corvallis ha implementato un classificatore statistico di tipo distance based.Per ciascun sottoscrittore, un vettore contenente il baricentro di ogni feature (centroid feature vector) viene calcolato utilizzando gli esemplari di firma genuini. Il vettore baricentro costituisce il template delle firme del firmatario. In fase di verifica, per misurare la distanza tra la firma template e la firma da testare, viene adoperata la distanza Euclidea nello spazio delle features.
+
+Io ho implementato un prototipo classificatore di tipo Hidden Markov Model. In seguito vedremo in dettaglio in cosa consiste.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 5: Casi d'uso
+
+Vediamo ora gli obiettivi di massima del progetto di stage.
+[Il progetto prevedeva come fase iniziale una ricerca di miglioramento dell’accuracy globale del distance-based classifier]
+
+[Come fase successiva era richiesto lo studio/documentazione di altri approcci (sempre statistical based) alla classificazione di firme statiche per valutare/capire se potessero portare risultati migliori in termini di accuracy; ]
+ Il progetto di stage prevedeva l'implementazione di un prototipo di tipo statistical based (diverso dal distance based - già implementato dall'azienda) per provarne le potenzialità. Al fine di riuscire a dimostrarne il funzionamento esso dovrà essere in grado di permettere le seguenti operazioni:
+ - selezionare un database di firmatari
+ - recepire i parametri impostati dall'utente da file properties (alcuni di questi parametri riguardano il numero di firme genuine in input al training, feature utilizzata, preprocessing utilizzati, certi threshold per il testing, template feature salvati in seguito al training)
+ - permettere l'avviamento del training sul database secondo i parametri utente
+-(benchmarking) permettere l'avviamento del testing sulle firme non visionate in fase di training, in seguito al training e visualizzarne a video l'esito, nonchè salvare su file per future revisioni
+
+- Uno degli obiettivi che avrebbe portato maggior valore al lavoro da svolgere è individuato dal requisito di qualità : garantire un'accuracy media del 80%; (ossia l'average error rate, la media tra il FAR e il FRR dovrà essere minore uguale al 20%).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 6: Progettazione, SCelte effettuate
+
+Vediamo ora alcune delle scelte effettuate in fase di progettazione.
+
+Modello di ciclo di vita: Poichè i requisiti di massima erano ben definiti e fissati in modo completo e l'architettura del sistema era già stata osservata nel prototipo preesistente, ho scelto di adottare il modello di ciclo di vita incrementale.
+
+
+Strumenti:
+Gli strumenti indicati dall'azienda per adempiere al progetto di stage erano il linguaggio di programmazione Java e l'integrated development environment Eclipse. Come anticipato, il core del classificatore sarà basato sui Hidden Markov Model based.
+
+Le librerie Java adottate sono : ImageJ per l'elaborazione delle immagini, quali preprocessings e feature extraction. Jahmm per l'implementazione dei modelli di markov a stati nascosti e degli algoritmi associati. (Jahmm può trattare sia Discrete HMM che Continuous HMM), offre metodi di forward algorithm e baum welch algorithm versione scaled per evitare  gli errori di underflow. (JScience può trattare solo Discrete HMM,) (jhmm può trattare solo discrete HMM, trasforma tutti i dati del modello (le 3 matrici caratteristiche) in logarithmic scale, in modo da evitare gli errori di underflow, poco documentato; ricordiamo che somme di logaritmi sono più precise di moltiplicazioni di probabilità che tendono a 0.
+
+Il pattern architteturale adottato è il MVC. Questa "scelta" è stata fatta in seguito allo studio del prototipo preesistente al progetto di stage. Tra i vantaggi del MVC ricordiamo : 
+Divide un'applicazione software in 3 parti interconnesse, in modo da separare le rappresentazioni interne  all'informazione dai modi in cui tale informazione viene presentata o accettata dall'utente. La componente centrale, il modello, consiste di application data, business rules, logica e funzioni. Una view può essere qualsiasi output che rappresenta informazione, come un grafico o un diagramma. Molteplici view della stessa informazione sono possibili. La terza parte ,i lcontroller 
+accetta input e converte i commandi per il modello o per la vieww.
+
+Un altro design pattern adottato è stato il design Pattern Composite (ideato originariamente dalla gang of four).
+Questo pattern permette di trattare un gruppo di oggetti come se fossero l'istanza di un oggetto singolo. Il design pattern Composite organizza gli oggetti in una struttura ad albero, nella quale i nodi sono delle composite e le foglie sono oggetti semplici.
+
+È utilizzato per dare la possibilità ai client di manipolare oggetti singoli e composizioni in modo uniforme.
+E' stato utilizzato per definire la GUI del prototipo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 7 : Hidden Markov Models
+The different signatures of a same writer are variable. This variability will be well modelized by a HMM.
+
+This modelization will allow to consider a non stationary signal (the signature) as a piecewise-stationary signal
+
+Un hidden markov model è un modello di Markov statistico in cui il sistema che si sta modellando si assume sia un processo markoviano a stati nascosti. (non deterministico) Il modello genera due stringhe di informazione : Una è data dal percorso di stati , man mano che transiziona tra essi. L'altra è data dalla sequenza di osservazioni che si susseguono. (ogni osservazione viene emessa da uno stato nascosto)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 8: Utilizzo dei HMM
+3 problemi importanti, in genere intrattabili:
+Evaluation problem, ossia dato una sequenza d'osservazione O e un modello lambda, calcolare la probabilità che la sequenza O possa venir generata dal modello lambda. Approccio banale ma funzionante, brute force: tuttavia in un modello ergodico, vi sono N^T possibili sequenze (complessità O(N^T*T)). (T is the length of the sequence and N is the number of symbols in the state alphabet)
+Decoding problem, ossia quale è la sequenza di stati nascosti che ha generato la sequenza d'osservazione.
+3 soluzioni utilizznado la programmazione dinamica:
+Forward algorthm: da O(N^T*T) a O(N^2*T)(ricorsivo), oppure backward algortihm? slide 50-56 (8-hmm)
+Viterbi's algorithm (ricorsivo) Viterbi0s decoding può essere utilizzato per evaluation problem, perchè lui prende sempre il massimo?
+Baum-Welch algorithm (iterativo) Itero un numero determinato di volte, oppure itero finchè viene raggiunto un certo threshold: P'-P>thresolh, itero, altirmenti basta. Fa uso di forward-backward algorithm e di viterbi?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 9: Vettori d:osservazione
+
+Vediamo ora come ho inizializzato i HMM per sottoscrittore.
+Partiamo col definire i vettori d'osservazione estrapolati dalla feature extraction.
+Come accennato in precedenza, la prima fase è data dai preprocessings sull'imagine firma. Il prototipo è in grado di applicare i seguenti preprocessings: cropping, binarization, skeletonization (particolare tipo di thinning, assottigliamento del tratto a un pixel larghezza), segmentation. I tipi di segmentazione sono 2 : grid based e Centre of gravity based segmentation. Nella grid based segmentation tutti i segmenti hanno dimensioni identiche Attualmente suddividamo in 64 celle (8*8). Nella centre of gravity based segmentation, le parti che compongono la firma molto probabilmente saranno diverse sia in larghezza che in altezza. Il CoG based segmentation prevede un primo taglio verticale attraverso il CoG dell'immagine prima originale, 2 tagli verticali successivi nelle due aree formate col primo taglio, sempre attraverso il CoG. Successivamente, si calcola il COG di ogni blocco e si taglia orizzontalmente attraverso il COG. Infine si taglia verticalmente e orizzontalmente attraverso il Cog di ogni parte di blocco. Risultato -> 64 celle.
+
+Effettuato il preprocessing, possiamo estrarre la feature voluta: in questo caso o lo Slant o la Discrete COsine Transform.
+ [SPIEGA SLANT E SPIEGA DCT]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 10: Inizializzazione HMM
+
+Per la nostra implementazione abbiamo deciso di assumere che gli stati nascosti sono 4. La topologia più indicata è la left to right or bakis model per il latin handwriting recognition. In particolare non accettiamo salti di stato. Data questa topologia, l'inizializzazione della matrice delle probabilità di transizione tra stati e della matrice delle probabilità di partire in un certo stato iniziale (insomma, A e pi) è evidente/scontata/ovvia/immediata. 
+(manca la matrice delle probabilità di emissione)
+Per ogni firma appartenete al training set vengono estrati i vettori d'osservazione in base alla feature desiderata. Successivamente il training set viene suddiviso in 2 parti: il baum welch training set e il validation set (utilizziamo la tecnica del cross validation per evitare l'overfittign, eccessivo adattamento), sul baum welch set applicchiamo il metodo kmeansclustering della libreria jscience, questo provede a clusterizzare e convertire in simboli discreti i vettori d'osservazione inizializzare la matrice delle probabilità di emissione.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 11: Implementazione 
+Più sono alti questi numeri, maggiore è la personalizzazione della classe, e il suo riutilizzo non è scontato, poichè si aumenta la fase di studio necessaria a capire come sfruttarla. Manutenibilità del codice...
+
+Analisi
+Ho effettuato analisi statica sui requisiti, verificando la loro atomicità, chiarezza di esposizione e completezza. Ho verificato la mappatura dei requisiti funzionali sui casi d'uso.
+
+Progettazione.
+Durante la fase di progettazione non sono stati progettati i test di unità. Le cause alla base di questa scelta sono:
+-visto l'ambito esplorativo in cui si colloca lo stage, io e il tutor interno non conoscevamo le dinamiche dei HMM, si era deciso quindi di spendere più tempo in progettazione di dettaglio con lo scopo di superare i problemi individuati in fase di codifica e puntare a un'accuracy più elevata.
+-inoltre abbiamo avuto una fiducia eccessiva nel prototipo usa e getta iniziale sul quale si poteva già effettuare benchmarking
+
+Implementazione
+Una forma di analisi statica effettuata è stata l'ispezione del codice (desk check). L'ispezione del codice può sembrare una tecnica primitiva, tuttavia è efficace per classi di errori come priority inversione, deadlock, memoryleak.
+
+La documentazione sul codice è stata effettuata in stile Javadoc, ogni classe è preceduta da una breve descrizione della stessa e dei suoi campi dati.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 12: Consuntivo Risultati
+Come possiamo notare su 770 firme testate in seguito ad un training effettuato utilizzando 5 firme genuine per sottoscrittore, solo 69% delle firme sono state classificate correttamente. L'Average error rate è del quasi 31%, è molto più alto di quanto ci eravamo prefissati di contenere (20%). Le cause di questo modesto risultato sono da attribuire ad alcune delle scelte progettuali effettuate : molte di queste, sono state compiute in base al tempo a disposizione, spesso, davanti a un problema o una decisione ho scelto la strada più facile o più veloce, che richiedesse meno tempo e formazione, in modo da avere il prima possibile un prototipo funzionante. (un esempio è dato dalla scelta di modellare i discrete HMM in seguito agli errori incontrati con la libreria JAHMM)
+Un'altra causa è l'overfitting, eccessivo adattamento, ridotto ma non del tutto eliminato con la cross validation. 5 firme per sottoscrittore in fase di training sono poche, e se sono anche "molto simili" tra loro, il modello non può che cadere in overfitting in seguito al training.
+
+
+Durante la progettazione/implementazione del prototipo, ho preso nota anche di possibili altri sviluppi che potrebbero migliorare l'accuracy corrente. Tra questi alcune attività potrebbero essere :
+-selezionare altre features più robuste
+-provare a utilizzare più features insieme
+-utilizzare i Continuous HMM
+-utilizzare i la tecnica dei pseudocounts per limitare l'overfitting
+-oppure la regularization
+-oppure il weighting
+-oppure cercare il numero di stati per sottoscrivente in base a dei genetic algorithms
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slide 13: Consuntivo Consuntivo
+Eh beh?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Fine
+
+avoid overfitting
+Weighting = normalizzare il raw score?
+
+Genetic algorithms per trovare il numero di stati nascosti che meglio descrive le firme di un firmatario
+
+
+The term "classifier" sometimes also refers to the mathematical function, implemented by a classification algorithm, that maps input data to a category.
+
+Il termine classificare si riferisce alla funzione matematica, implementata da un algoritmo di classificazione, che mappa i dati in input in categorie.

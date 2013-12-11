@@ -1,0 +1,14 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {italian}
+\beamer@sectionintoc {1}{Analisi}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Classificazione di firme statiche}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Processi generali}{13}{0}{1}
+\beamer@subsectionintoc {1}{3}{Metodi di classificazione}{16}{0}{1}
+\beamer@subsectionintoc {1}{4}{Casi d'uso}{19}{0}{1}
+\beamer@sectionintoc {2}{Progettazione}{21}{0}{2}
+\beamer@subsectionintoc {2}{1}{Scelte effettuate}{21}{0}{2}
+\beamer@subsectionintoc {2}{2}{Hidden Markov Models}{25}{0}{2}
+\beamer@sectionintoc {3}{Implementazione}{45}{0}{3}
+\beamer@sectionintoc {4}{Consuntivo}{49}{0}{4}
+\beamer@subsectionintoc {4}{1}{Risultati}{49}{0}{4}
+\beamer@subsectionintoc {4}{2}{Consuntivo}{52}{0}{4}
